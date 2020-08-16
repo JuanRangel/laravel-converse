@@ -2,6 +2,7 @@
 
 namespace Vsellis\Converse\Http\Livewire\Conversations;
 
+use Illuminate\View\View;
 use Livewire\Component;
 use Vsellis\Converse\Models\Conversation;
 
@@ -11,12 +12,12 @@ class ConversationReply extends Component
     public $conversation;
     public $body = '';
 
-    public function mount(Conversation $conversation)
+    public function mount(Conversation $conversation) : void
     {
         $this->conversation = $conversation;
     }
 
-    public function submit()
+    public function submit() : void
     {
         $this->validate([
             'body' => 'required'
@@ -31,7 +32,7 @@ class ConversationReply extends Component
         $this->body = '';
     }
 
-    public function render()
+    public function render() : View
     {
         return view('converse::livewire.conversation-reply');
     }

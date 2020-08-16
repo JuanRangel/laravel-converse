@@ -15,7 +15,7 @@ use Vsellis\Converse\Http\Livewire\TestComponent;
 
 class ConverseServiceProvider extends ServiceProvider
 {
-    public function boot()
+    public function boot() : void
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
@@ -56,7 +56,7 @@ class ConverseServiceProvider extends ServiceProvider
         Livewire::component('converse::conversations.conversation-reply', ConversationReply::class);
     }
 
-    public function register()
+    public function register() : void
     {
         $this->mergeConfigFrom(__DIR__ . '/../config/converse.php', 'converse');
     }

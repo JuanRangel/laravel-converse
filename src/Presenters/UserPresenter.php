@@ -15,7 +15,7 @@ class UserPresenter
         $this->model = $model;
     }
 
-    public function name()
+    public function name() : string
     {
         if($this->model->id === auth()->id()) {
             return 'You';

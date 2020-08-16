@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Vsellis\Converse\Tests\TestCase;
+use Vsellis\Converse\Tests\User;
 
 class ConversationControllerTest extends TestCase
 {
@@ -10,7 +11,8 @@ class ConversationControllerTest extends TestCase
     {
         $this->withoutExceptionHandling();
 
-        $response = $this->get('/conversations')->assertSeeLivewire('converse::conversations.conversation-list');
-        $response->assertSee('This is just a test.');
+        $user = User::first();
+        $response = $this->actingAs($user)->get('/conversations');
+        $response->assertOk();
     }
 }
