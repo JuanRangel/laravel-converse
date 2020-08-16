@@ -10,7 +10,7 @@ class ConversationControllerTest extends TestCase
     {
         $this->withoutExceptionHandling();
 
-        $user     = User::first();
+        $user = User::first();
         $response = $this->actingAs($user)->get('/conversations');
         $response->assertOk();
     }

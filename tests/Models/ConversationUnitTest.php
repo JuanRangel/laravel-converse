@@ -9,11 +9,10 @@ class ConversationUnitTest extends TestCase
     /** @test */
     public function it_has_many_messages()
     {
-
         $conversation = factory(Conversation::class)->create();
         $conversation->messages()->create(factory(Message::class)->raw([
-            'user_id'=> 1,
-            'body' => 'Hello'
+            'user_id' => 1,
+            'body' => 'Hello',
         ]));
 
         $this->assertCount(1, $conversation->messages);
