@@ -1,13 +1,13 @@
 <?php
 
-namespace Vsellis\LaravelConverse;
+namespace Vsellis\Converse;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Vsellis\LaravelConverse\LaravelConverse
+ * @see \Vsellis\Converse\Converse
  */
-class LaravelConverseFacade extends Facade
+class ConverseFacade extends Facade
 {
     protected static function getFacadeAccessor()
     {

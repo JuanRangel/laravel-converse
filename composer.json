@@ -1,22 +1,22 @@
 {
-    "name": "spatie/laravel-converse",
+    "name": "vsellis/laravel-converse",
     "description": "A conversation package",
     "keywords": [
-        "spatie",
+        "vsellis",
         "laravel-converse"
     ],
-    "homepage": "https://github.com/spatie/laravel-converse",
+    "homepage": "https://github.com/vsellis/laravel-converse",
     "license": "MIT",
     "authors": [
         {
             "name": "Juan",
             "email": "juan@vsellis.com",
-            "homepage": "https://spatie.be",
+            "homepage": "https://vsellis.com",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": "^7.4"
+        "php": "^7.3"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.16",
@@ -27,12 +27,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Vsellis\\LaravelConverse\\": "src"
+            "Vsellis\\Converse\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Vsellis\\LaravelConverse\\Tests\\": "tests"
+            "Vsellis\\Converse\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -47,10 +47,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Vsellis\\LaravelConverse\\LaravelConverseServiceProvider"
+                "Vsellis\\Converse\\ConverseServiceProvider"
             ],
             "aliases": {
-                "LaravelConverse": "Vsellis\\LaravelConverse\\LaravelConverseFacade"
+                "Converse": "Vsellis\\Converse\\ConverseFacade"
             }
         }
     },

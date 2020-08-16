@@ -4,11 +4,11 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLaravelConverseTable extends Migration
+class CreateConverseTable extends Migration
 {
     public function up()
     {
-        Schema::create('laravel-converse_table', function (Blueprint $table) {
+        Schema::create('converse_table', function (Blueprint $table) {
             $table->bigIncrements('id');
 
             // add fields

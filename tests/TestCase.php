@@ -1,9 +1,9 @@
 <?php
 
-namespace Vsellis\LaravelConverse\Tests;
+namespace Vsellis\Converse\Tests;
 
 use Orchestra\Testbench\TestCase as Orchestra;
-use Vsellis\LaravelConverse\LaravelConverseServiceProvider;
+use Vsellis\Converse\ConverseServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -17,7 +17,7 @@ class TestCase extends Orchestra
     protected function getPackageProviders($app)
     {
         return [
-            LaravelConverseServiceProvider::class,
+            ConverseServiceProvider::class,
         ];
     }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Vsellis\LaravelConverse\Tests;
+namespace Vsellis\Converse\Tests;
 
 class ExampleTest extends TestCase
 {

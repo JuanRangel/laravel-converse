@@ -1,12 +1,12 @@
 <?php
 
-namespace Vsellis\LaravelConverse\Commands;
+namespace Vsellis\Converse\Commands;
 
 use Illuminate\Console\Command;
 
-class LaravelConverseCommand extends Command
+class ConverseCommand extends Command
 {
-    public $signature = 'laravel-converse';
+    public $signature = 'converse';
 
     public $description = 'My command';
 

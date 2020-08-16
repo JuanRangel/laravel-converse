@@ -18,13 +18,13 @@ composer require vsellis/laravel-converse
 You can publish and run the migrations with:
 
 ```bash
-php artisan vendor:publish --provider="Vsellis\LaravelConverse\LaravelConverseServiceProvider" --tag="migrations"
+php artisan vendor:publish --provider="Vsellis\Converse\ConverseServiceProvider" --tag="migrations"
 php artisan migrate
 ```
 
 You can publish the config file with:
 ```bash
-php artisan vendor:publish --provider="Vsellis\LaravelConverse\LaravelConverseServiceProvider" --tag="config"
+php artisan vendor:publish --provider="Vsellis\Converse\ConverseServiceProvider" --tag="config"
 ```
 
 This is the contents of the published config file:
@@ -37,7 +37,7 @@ return [
 ## Usage
 
 ``` php
-$laravel-converse = new Vsellis\LaravelConverse();
+$laravel-converse = new Vsellis\Converse();
 echo $laravel-converse->echoPhrase('Hello, Vsellis!');
 ```
 

@@ -1,11 +1,11 @@
 <?php
 
-namespace Vsellis\LaravelConverse;
+namespace Vsellis\Converse;
 
 use Illuminate\Support\ServiceProvider;
-use Vsellis\LaravelConverse\Commands\LaravelConverseCommand;
+use Vsellis\Converse\Commands\ConverseCommand;
 
-class LaravelConverseServiceProvider extends ServiceProvider
+class ConverseServiceProvider extends ServiceProvider
 {
     public function boot()
     {
@@ -25,7 +25,7 @@ class LaravelConverseServiceProvider extends ServiceProvider
             }
 
             $this->commands([
-                LaravelConverseCommand::class,
+                ConverseCommand::class,
             ]);
         }
 
