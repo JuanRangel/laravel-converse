@@ -16,7 +16,7 @@ class ConversationController
     public function show(Conversation $conversation) : View
     {
         return view('converse::conversations.show', [
-            'conversation' => $conversation,
+            'conversation'  => $conversation,
             'conversations' => auth()->user()->conversations,
         ]);
     }
