@@ -7,7 +7,6 @@ use Livewire\Component;
 
 class ConversationList extends Component
 {
-
     public $conversations;
 
     public function mount($conversations) : void

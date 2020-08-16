@@ -6,7 +6,6 @@ use Vsellis\Converse\Models\Conversation;
 
 class ConversationController
 {
-
     public function index() : View
     {
         return view('converse::conversations.index', [

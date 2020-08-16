@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Message extends Model
 {
-
     protected $guarded = ['id'];
 
     public function conversation() : BelongsTo

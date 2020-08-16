@@ -1,6 +1,5 @@
 <?php namespace Vsellis\Converse\Tests\Feature\Http\Controllers;
 
-use Illuminate\Support\Facades\Route;
 use Vsellis\Converse\Tests\TestCase;
 use Vsellis\Converse\Tests\User;
 

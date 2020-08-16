@@ -9,7 +9,6 @@ use Vsellis\Converse\Models\Message;
 
 class ConversationMessages extends Component
 {
-
     public $messages;
 
     public function mount(Collection $messages) : void
@@ -20,7 +19,7 @@ class ConversationMessages extends Component
     public function getListeners() : array
     {
         return [
-            'message.created' => 'appendMessage'
+            'message.created' => 'appendMessage',
         ];
     }
 

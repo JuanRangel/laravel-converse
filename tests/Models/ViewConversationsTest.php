@@ -12,7 +12,7 @@ class ViewConversationsTest extends TestCase
         $this->withoutExceptionHandling();
 
         $conversations = factory(Conversation::class)->raw();
-        $user          = User::first();
+        $user = User::first();
         $user->conversations()->create($conversations);
 
         $response = $this->actingAs($user)->get('/conversations');
@@ -28,7 +28,7 @@ class ViewConversationsTest extends TestCase
     {
         $this->withoutExceptionHandling();
 
-        $user          = User::first();
+        $user = User::first();
         $conversation = factory(Conversation::class)->create();
         $conversation->users()->attach(User::all());
         $conversation->messages()->create([

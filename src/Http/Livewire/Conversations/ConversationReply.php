@@ -8,7 +8,6 @@ use Vsellis\Converse\Models\Conversation;
 
 class ConversationReply extends Component
 {
-
     public $conversation;
     public $body = '';
 
@@ -20,12 +19,12 @@ class ConversationReply extends Component
     public function submit() : void
     {
         $this->validate([
-            'body' => 'required'
+            'body' => 'required',
         ]);
 
         $message = $this->conversation->messages()->create([
             'user_id' => auth()->id(),
-            'body' => $this->body
+            'body' => $this->body,
         ]);
 
         $this->emit('message.created', $message->id);
