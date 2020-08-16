@@ -10,7 +10,7 @@ class Message extends Model
 
     public function conversation(): BelongsTo
     {
-        return $this->belongsTo(Conversation::class);
+        return $this->belongsTo(config('converse.models.conversation'));
     }
 
     public function user(): BelongsToMany

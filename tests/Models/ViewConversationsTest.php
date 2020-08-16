@@ -1,6 +1,7 @@
 <?php namespace Vsellis\Converse\Tests\Models;
 
 use Vsellis\Converse\Models\Conversation;
+use Vsellis\Converse\Models\Message;
 use Vsellis\Converse\Tests\TestCase;
 use Vsellis\Converse\Tests\User;
 
@@ -26,15 +27,17 @@ class ViewConversationsTest extends TestCase
     /** @test */
     public function a_user_can_view_a_conversation()
     {
-        $this->withoutExceptionHandling();
-
-        $user = User::first();
         $conversation = factory(Conversation::class)->create();
-        $conversation->users()->attach(User::all());
-        $conversation->messages()->create([
-            'user_id' => $user->id,
-            'body' => 'Hello, world',
-        ]);
+        $user = User::first();
+        $user2 = User::find(2);
+
+        $user->conversations()->attach($conversation);
+        $user2->conversations()->attach($conversation);
+
+        $conversation->messages()->create(factory(Message::class)->raw([
+            'user_id'=> 1,
+            'body' => 'Hello, world'
+        ]));
 
         $response = $this->actingAs($user)->get(route('conversations.show', $conversation));
 
@@ -43,6 +46,6 @@ class ViewConversationsTest extends TestCase
         $response->assertViewHas('conversation');
 
         $response->assertSee('Jane Doe');
-        $response->assertSee('Hello, world.');
+        $response->assertSee('Hello, world');
     }
 }
