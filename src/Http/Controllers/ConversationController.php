@@ -5,19 +5,18 @@ use Vsellis\Converse\Models\Conversation;
 
 class ConversationController
 {
-
     public function index()
     {
         return view('converse::conversations.index', [
-            'conversations' => Auth::user()->conversations
+            'conversations' => Auth::user()->conversations,
         ]);
     }
 
     public function show(Conversation $conversation)
     {
         return view('converse::conversations.show', [
-            'conversation'  => $conversation,
-            'conversations' => Auth::user()->conversations
+            'conversation' => $conversation,
+            'conversations' => Auth::user()->conversations,
         ]);
     }
 }

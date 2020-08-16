@@ -42,8 +42,6 @@ class TestCase extends Orchestra
 
         include_once __DIR__.'/../database/migrations/create_converse_tables.php.stub';
         (new \CreateConverseTables())->up();
-
-
     }
 
     private function setUpDatabase(\Illuminate\Foundation\Application $app)
@@ -58,5 +56,4 @@ class TestCase extends Orchestra
         User::create(['email' => 'john@example.com', 'name' => 'John Doe']);
         User::create(['email' => 'jane@example.com', 'name' => 'Jane Doe']);
     }
-
 }

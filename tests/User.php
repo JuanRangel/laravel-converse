@@ -5,7 +5,6 @@ use Vsellis\Converse\Traits\CanConverse;
 
 class User extends Authenticatable
 {
-
     use CanConverse;
 
     protected $guarded = [];
