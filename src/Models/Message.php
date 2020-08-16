@@ -8,12 +8,12 @@ class Message extends Model
 {
     protected $guarded = ['id'];
 
-    public function conversation() : BelongsTo
+    public function conversation(): BelongsTo
     {
         return $this->belongsTo(Conversation::class);
     }
 
-    public function user() : BelongsToMany
+    public function user(): BelongsToMany
     {
         return $this->belongsToMany(config('auth.providers.users.model'));
     }
