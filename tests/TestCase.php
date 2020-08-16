@@ -2,6 +2,9 @@
 
 namespace Vsellis\Converse\Tests;
 
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Route;
+use Livewire\LivewireServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 use Vsellis\Converse\ConverseServiceProvider;
 
@@ -12,11 +15,15 @@ class TestCase extends Orchestra
         parent::setUp();
 
         $this->withFactories(__DIR__.'/database/factories');
+        $this->setUpDatabase($this->app);
+
+        Route::converse('conversations');
     }
 
     protected function getPackageProviders($app)
     {
         return [
+            LivewireServiceProvider::class,
             ConverseServiceProvider::class,
         ];
     }
@@ -29,10 +36,27 @@ class TestCase extends Orchestra
             'database' => ':memory:',
             'prefix' => '',
         ]);
+        $app['config']->set('auth.providers.users.model', User::class);
 
-        /*
-        include_once __DIR__.'/../database/migrations/create_laravel_converse_table.php.stub';
-        (new \CreatePackageTable())->up();
-        */
+        $app['config']->set('app.key', 'base64:Hupx3yAySikrM2/edkZQNQHslgDWYfiBfCuSThJ5SK8=');
+
+        include_once __DIR__.'/../database/migrations/create_converse_tables.php.stub';
+        (new \CreateConverseTables())->up();
+
+
     }
+
+    private function setUpDatabase(\Illuminate\Foundation\Application $app)
+    {
+        $app['db']->connection()->getSchemaBuilder()->create('users', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('email');
+            $table->string('name');
+            $table->softDeletes();
+        });
+
+        User::create(['email' => 'john@example.com', 'name' => 'John Doe']);
+        User::create(['email' => 'jane@example.com', 'name' => 'Jane Doe']);
+    }
+
 }

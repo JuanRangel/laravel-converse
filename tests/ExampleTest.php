@@ -2,11 +2,16 @@
 
 namespace Vsellis\Converse\Tests;
 
+use Livewire\Livewire;
+use Vsellis\Converse\Http\Livewire\TestComponent;
+
 class ExampleTest extends TestCase
 {
     /** @test */
-    public function true_is_true()
+    public function livewire_test()
     {
-        $this->assertTrue(true);
+        $test = Livewire::test(TestComponent::class);
+
+        $test->assertSee('This is just a test.');
     }
 }

@@ -2,8 +2,16 @@
 
 namespace Vsellis\Converse;
 
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use Livewire\Livewire;
 use Vsellis\Converse\Commands\ConverseCommand;
+use Vsellis\Converse\Http\Controllers\ConversationController;
+use Vsellis\Converse\Http\Livewire\Conversations\ConversationHeader;
+use Vsellis\Converse\Http\Livewire\Conversations\ConversationList;
+use Vsellis\Converse\Http\Livewire\Conversations\ConversationMessages;
+use Vsellis\Converse\Http\Livewire\Conversations\ConversationReply;
+use Vsellis\Converse\Http\Livewire\TestComponent;
 
 class ConverseServiceProvider extends ServiceProvider
 {
@@ -11,16 +19,16 @@ class ConverseServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../config/laravel-converse.php' => config_path('laravel-converse.php'),
+                __DIR__ . '/../config/laravel-converse.php' => config_path('laravel-converse.php'),
             ], 'config');
 
             $this->publishes([
-                __DIR__.'/../resources/views' => base_path('resources/views/vendor/laravel-converse'),
+                __DIR__ . '/../resources/views' => base_path('resources/views/vendor/laravel-converse'),
             ], 'views');
 
-            if (! class_exists('CreatePackageTable')) {
+            if (!class_exists('CreatePackageTable')) {
                 $this->publishes([
-                    __DIR__ . '/../database/migrations/create_laravel_converse_table.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_laravel_converse_table.php'),
+                    __DIR__ . '/../database/migrations/create_converse_tables.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_converse_tables.php'),
                 ], 'migrations');
             }
 
@@ -29,11 +37,27 @@ class ConverseServiceProvider extends ServiceProvider
             ]);
         }
 
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'laravel-converse');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'converse');
+
+        Route::macro('converse', function (string $prefix) {
+            Route::prefix($prefix)->group(function () {
+                Route::get('/', [ConversationController::class, 'index'])->name('conversations.index');
+                Route::get('/{conversation}', [ConversationController::class, 'show'])->name('conversations.show');
+            });
+        });
+
+        /**
+         * Livewire Components
+         */
+//        Livewire::component('converse::test-component', TestComponent::class);
+        Livewire::component('converse::conversations.conversation-list', ConversationList::class);
+        Livewire::component('converse::conversations.conversation-header', ConversationHeader::class);
+        Livewire::component('converse::conversations.conversation-messages', ConversationMessages::class);
+        Livewire::component('converse::conversations.conversation-reply', ConversationReply::class);
     }
 
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/laravel-converse.php', 'laravel-converse');
+        $this->mergeConfigFrom(__DIR__ . '/../config/converse.php', 'converse');
     }
 }
