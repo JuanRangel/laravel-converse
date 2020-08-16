@@ -8,11 +8,6 @@ class Conversation extends Model
 {
     protected $guarded = [];
 
-    public function getRouteKeyName()
-    {
-        return 'uuid';
-    }
-
     public function users() : BelongsToMany
     {
         return $this->belongsToMany(config('auth.providers.users.model'));
