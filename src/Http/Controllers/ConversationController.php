@@ -9,15 +9,15 @@ class ConversationController
     public function index() : View
     {
         return view('converse::conversations.index', [
-            'conversations' => auth()->user()->conversations
+            'conversations' => auth()->user()->conversations,
         ]);
     }
 
     public function show(Conversation $conversation) : View
     {
         return view('converse::conversations.show', [
-            'conversation'  => $conversation,
-            'conversations' => auth()->user()->conversations
+            'conversation' => $conversation,
+            'conversations' => auth()->user()->conversations,
         ]);
     }
 }

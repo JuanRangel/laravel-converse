@@ -33,7 +33,7 @@ class ViewConversationsTest extends TestCase
         $conversation->users()->attach(User::all());
         $conversation->messages()->create([
             'user_id' => $user->id,
-            'body' => 'Hello, world'
+            'body' => 'Hello, world',
         ]);
 
         $response = $this->actingAs($user)->get(route('conversations.show', $conversation));
