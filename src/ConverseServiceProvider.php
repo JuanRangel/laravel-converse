@@ -42,7 +42,7 @@ class ConverseServiceProvider extends ServiceProvider
         Route::macro('converse', function (string $prefix) {
             Route::prefix($prefix)->group(function () {
                 Route::get('/', [ConversationController::class, 'index'])->name('conversations.index');
-                Route::get('/{conversation}', [ConversationController::class, 'show'])->name('conversations.show');
+                Route::get('/{conversation}', [ConversationController::class, 'show'])->name('conversations.show')->middleware('bindings');
             });
         });
 

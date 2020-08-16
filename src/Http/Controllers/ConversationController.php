@@ -13,10 +13,8 @@ class ConversationController
         ]);
     }
 
-    public function show($conversation) : View
+    public function show(Conversation $conversation) : View
     {
-        $conversation = Conversation::where('uuid', $conversation)->firstOrFail();
-
         return view('converse::conversations.show', [
             'conversation'  => $conversation,
             'conversations' => auth()->user()->conversations,
