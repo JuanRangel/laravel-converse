@@ -35,8 +35,8 @@ class ViewConversationsTest extends TestCase
         $user2->conversations()->attach($conversation);
 
         $conversation->messages()->create(factory(Message::class)->raw([
-            'user_id'=> 1,
-            'body' => 'Hello, world'
+            'user_id' => 1,
+            'body' => 'Hello, world',
         ]));
 
         $response = $this->actingAs($user)->get(route('conversations.show', $conversation));
