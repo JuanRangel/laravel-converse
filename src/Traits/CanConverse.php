@@ -14,4 +14,9 @@ trait CanConverse
     {
         return new UserPresenter($this);
     }
+
+    public function inConversation($id)
+    {
+        return $this->conversations->contains('id', $id);
+    }
 }

@@ -33,12 +33,28 @@ This is the contents of the published config file:
 return [
 ];
 ```
+## Realtime Messages
+
+TODO
+
+Now we can run the migration command
+
+```bash
+php artisan migrate
+```
+
+Make sure that the `BroadcastServiceProvider` is active in `app.php`
 
 ## Usage
 
 ``` php
 $laravel-converse = new Vsellis\Converse();
 echo $laravel-converse->echoPhrase('Hello, Vsellis!');
+```
+
+We now have to install laravel-echo and pusher-js
+```bash
+npm install laravel-echo pusher-js
 ```
 
 ## Testing

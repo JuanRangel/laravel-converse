@@ -2,6 +2,7 @@
 
 namespace Vsellis\Converse;
 
+use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
@@ -19,16 +20,16 @@ class ConverseServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/../config/laravel-converse.php' => config_path('laravel-converse.php'),
+                __DIR__.'/../config/laravel-converse.php' => config_path('laravel-converse.php'),
             ], 'config');
 
             $this->publishes([
-                __DIR__ . '/../resources/views' => base_path('resources/views/vendor/laravel-converse'),
+                __DIR__.'/../resources/views' => base_path('resources/views/vendor/laravel-converse'),
             ], 'views');
 
-            if (! class_exists('CreatePackageTable')) {
+            if (!class_exists('CreatePackageTable')) {
                 $this->publishes([
-                    __DIR__ . '/../database/migrations/create_converse_tables.php.stub' => database_path('migrations/' . date('Y_m_d_His', time()) . '_create_converse_tables.php'),
+                    __DIR__.'/../database/migrations/create_converse_tables.php.stub' => database_path('migrations/'.date('Y_m_d_His', time()).'_create_converse_tables.php'),
                 ], 'migrations');
             }
 
@@ -37,12 +38,20 @@ class ConverseServiceProvider extends ServiceProvider
             ]);
         }
 
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'converse');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'converse');
 
         Route::macro('converse', function (string $prefix) {
-            Route::prefix($prefix)->middleware('auth')->group(function () {
+            Route::prefix($prefix)->group(function () {
                 Route::get('/', [ConversationController::class, 'index'])->name('conversations.index');
                 Route::get('{conversation:uuid}', [ConversationController::class, 'show'])->name('conversations.show')->middleware('bindings');
+
+
+                /**
+                 * Broadcasting Channels
+                 */
+                Broadcast::channel('conversations.{id}', function ($user, $id) {
+                    return $user->inConversation($id);
+                });
             });
         });
 
@@ -58,6 +67,6 @@ class ConverseServiceProvider extends ServiceProvider
 
     public function register() : void
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/converse.php', 'converse');
+        $this->mergeConfigFrom(__DIR__.'/../config/converse.php', 'converse');
     }
 }

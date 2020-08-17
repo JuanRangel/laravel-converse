@@ -69,7 +69,7 @@
 
                         <section class="flex flex-col flex-auto border-l border-gray-800">
                             <livewire:converse::conversations.conversation-header :conversation="$conversation"/>
-                            <livewire:converse::conversations.conversation-messages :messages="$conversation->messages"/>
+                            <livewire:converse::conversations.conversation-messages :conversation="$conversation" :messages="$conversation->messages"/>
                             <livewire:converse::conversations.conversation-reply :conversation="$conversation"/>
                         </section>
                     </main>

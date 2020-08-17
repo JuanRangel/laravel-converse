@@ -1,0 +1,27 @@
+preset: package
+
+namespace: Vsellis\Converse
+user-auth-provider: App\User
+
+paths:
+  src: src
+  resource: resources
+
+factory:
+  path: database/factories
+
+migration:
+  path: database/migrations
+  prefix: ''
+
+console:
+  namespace: Vsellis\Converse\Console
+
+model:
+  namespace: Vsellis\Converse
+
+provider:
+  namespace: Vsellis\Converse\Providers
+
+testing:
+  namespace: Vsellis\Converse\Tests

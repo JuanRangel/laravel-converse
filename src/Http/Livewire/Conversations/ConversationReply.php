@@ -4,6 +4,7 @@ namespace Vsellis\Converse\Http\Livewire\Conversations;
 
 use Illuminate\View\View;
 use Livewire\Component;
+use Vsellis\Converse\Events\MessageAdded;
 use Vsellis\Converse\Models\Conversation;
 
 class ConversationReply extends Component
@@ -27,6 +28,7 @@ class ConversationReply extends Component
             'body' => $this->body,
         ]);
 
+        broadcast(new MessageAdded($message))->toOthers();
         $this->emit('message.created', $message->id);
         $this->body = '';
     }

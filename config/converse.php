@@ -7,6 +7,11 @@ return [
      */
     'logo' => 'https://loremflickr.com/320/320',
 
+    /**
+     * Fields you wish to encrypt. If you do not want to use encryption pass an empty array.
+     */
+    'encrypt' => ['body'],
+
     'models' => [
         /**
          * This is the model where all conversations live
