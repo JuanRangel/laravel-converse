@@ -2,7 +2,7 @@
     <div class="header p-4 flex flex-row justify-between items-center flex-none">
         <div class="w-16 h-16 relative flex flex-shrink-0">
             <img class="rounded-full w-full h-full object-cover" alt="ravisankarchinnam"
-                 src="https://visit.nemedic.com/images/nemedic-logo.jpg"/>
+                 src="{{config('converse.logo')}}"/>
         </div>
         <p class="text-md font-bold hidden md:block group-hover:block">{{env('APP_NAME')}}</p>
         <a href="#" class="block rounded-full hover:bg-gray-700 bg-gray-800 w-10 h-10 p-2 hidden md:block group-hover:block">

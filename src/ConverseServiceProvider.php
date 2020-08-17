@@ -40,7 +40,7 @@ class ConverseServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'converse');
 
         Route::macro('converse', function (string $prefix) {
-            Route::prefix($prefix)->group(function () {
+            Route::prefix($prefix)->middleware('auth')->group(function () {
                 Route::get('/', [ConversationController::class, 'index'])->name('conversations.index');
                 Route::get('{conversation:uuid}', [ConversationController::class, 'show'])->name('conversations.show')->middleware('bindings');
             });
