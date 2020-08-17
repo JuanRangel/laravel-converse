@@ -7,7 +7,6 @@ use Vsellis\Converse\Traits\Encryptable;
 
 class Message extends Model
 {
-
     use Encryptable;
 
     protected $guarded = ['id'];

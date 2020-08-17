@@ -32,6 +32,7 @@ trait Encryptable
             if (isset($this->dontThrowDecryptException) && $this->dontThrowDecryptException === true) {
                 return $value;
             }
+
             throw $e;
         }
     }
