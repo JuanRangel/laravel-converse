@@ -8,7 +8,6 @@ use Vsellis\Converse\Models\Conversation;
 
 class ConversationHeader extends Component
 {
-
     public $conversation;
 
     public function mount(Conversation $conversation) : void
