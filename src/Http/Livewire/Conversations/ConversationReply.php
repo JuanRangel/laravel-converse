@@ -4,31 +4,30 @@ namespace Vsellis\Converse\Http\Livewire\Conversations;
 
 use Illuminate\View\View;
 use Livewire\Component;
-use Vsellis\Converse\Events\MessageAdded;
 use Vsellis\Converse\Models\Conversation;
+use Vsellis\Converse\Services\CreateMessageService;
 
 class ConversationReply extends Component
 {
     public $conversation;
     public $body = '';
 
+//    protected $messageService;
+
     public function mount(Conversation $conversation) : void
     {
         $this->conversation = $conversation;
+//        $this->messageService = $messageService;
     }
 
-    public function submit() : void
+    public function submit(CreateMessageService $messageService) : void
     {
         $this->validate([
             'body' => 'required',
         ]);
 
-        $message = $this->conversation->messages()->create([
-            'user_id' => auth()->id(),
-            'body' => $this->body,
-        ]);
+        $message = $messageService->create($this->conversation, auth()->user(), $this->body);
 
-        broadcast(new MessageAdded($message))->toOthers();
         $this->emit('message.created', $message->id);
         $this->body = '';
     }
