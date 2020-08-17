@@ -15,6 +15,14 @@ You can install the package via composer:
 composer require vsellis/laravel-converse
 ```
 
+Add the CanConverse trait to your user model
+```php
+class User
+{
+    use Vsellis\Converse\Traits\CanConverse;
+}    
+```
+
 You can publish and run the migrations with:
 
 ```bash
@@ -35,9 +43,46 @@ return [
 ```
 ## Realtime Messages
 
-TODO
+Add your pusher info in the.env file
 
+```
+PUSHER_APP_ID=12345
+PUSHER_APP_KEY=12345
+PUSHER_APP_SECRET=12345
+PUSHER_APP_CLUSTER=us2
+```
+
+Set your broadcast driver to pusher in the .env file
+
+```
+BROADCAST_DRIVER=pusher
+```
+
+Enable the broadcast driver by uncommenting the `App\Providers\BroadcastServiceProvider::class` in `js/config/app.php`
+
+```javascript
+import Echo from 'laravel-echo';
+
+window.Pusher = require('pusher-js');
+
+window.Echo = new Echo({
+    broadcaster: 'pusher',
+    key: process.env.MIX_PUSHER_APP_KEY,
+    cluster: process.env.MIX_PUSHER_APP_CLUSTER,
+    forceTLS: true
+});
+``` 
+
+
+Install laravel-echo and pusher 
+https://laravel.com/docs/7.x/broadcasting
+
+be sure and uncomment or add this to your `bootstrap.js` file
+
+`npm install --save laravel-echo pusher-js`
 Now we can run the migration command
+
+Run `npm run dev` to compile the assets
 
 ```bash
 php artisan migrate

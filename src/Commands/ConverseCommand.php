@@ -6,9 +6,9 @@ use Illuminate\Console\Command;
 
 class ConverseCommand extends Command
 {
-    public $signature = 'converse';
+    public $signature = 'converse:make:action';
 
-    public $description = 'My command';
+    public $description = 'Scaffold an action class to extend converse.';
 
     public function handle() : void
     {
