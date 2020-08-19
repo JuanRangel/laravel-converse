@@ -2,8 +2,6 @@
 
 namespace Vsellis\Converse\Tests\Feature;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Orchestra\Testbench\TestCase;
 
 class ConverseTest extends TestCase

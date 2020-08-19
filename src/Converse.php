@@ -5,7 +5,6 @@ namespace Vsellis\Converse;
 use Illuminate\Support\Str;
 use Vsellis\Converse\Events\MessageAdded;
 use Vsellis\Converse\Models\Conversation;
-use Vsellis\Converse\Services\CreateConversationService;
 
 class Converse
 {

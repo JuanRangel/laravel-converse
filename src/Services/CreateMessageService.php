@@ -3,7 +3,6 @@
 use Illuminate\Database\Eloquent\Model;
 use Vsellis\Converse\Events\MessageAdded;
 use Vsellis\Converse\Models\Conversation;
-use Vsellis\Converse\Models\Message;
 
 class CreateMessageService
 {
@@ -18,5 +17,4 @@ class CreateMessageService
 
         return $message;
     }
-
 }
