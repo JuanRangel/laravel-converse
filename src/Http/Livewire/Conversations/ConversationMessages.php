@@ -35,11 +35,13 @@ class ConversationMessages extends Component
     public function appendMessage($id) : void
     {
         $this->messages->push(Message::find($id));
+        $this->dispatchBrowserEvent('scroll-chat');
     }
 
     public function appendMessageFromBroadcast($payload) : void
     {
         $this->messages->push(Message::find($payload['message']));
+        $this->dispatchBrowserEvent('scroll-chat');
     }
 
     public function render() : View

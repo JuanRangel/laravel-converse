@@ -18,8 +18,8 @@ class Message extends Model
         return $this->belongsTo(config('converse.models.conversation'));
     }
 
-    public function user() : BelongsToMany
+    public function user() : BelongsTo
     {
-        return $this->belongsToMany(config('auth.providers.users.model'));
+        return $this->belongsTo(config('auth.providers.users.model'));
     }
 }

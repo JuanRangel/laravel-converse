@@ -7,7 +7,7 @@ trait CanConverse
 {
     public function conversations()
     {
-        return $this->belongsToMany(Conversation::class);
+        return $this->belongsToMany(Conversation::class)->withTimestamps();
     }
 
     public function present()

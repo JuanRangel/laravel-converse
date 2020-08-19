@@ -4,6 +4,7 @@ namespace Vsellis\Converse\Tests\Feature\Services;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use Vsellis\Converse\Converse;
 use Vsellis\Converse\Models\Conversation;
 use Vsellis\Converse\Models\Message;
 use Vsellis\Converse\Services\CreateConversationService;
@@ -20,11 +21,8 @@ class CreateMessageServiceTest extends TestCase
 
         $user = User::first();
 
-        $conversationService = new CreateConversationService;
-        $conversation = $conversationService->create();
-
-        $service = new CreateMessageService;
-        $message = $service->create($conversation, $user, 'I live turtles');
+        $conversation = Converse::createConversation($user);
+        $message = Converse::createMessage($conversation, $user, 'I like turtles');
 
         $this->assertNotNull($message);
         $this->assertNotNull(Message::first());

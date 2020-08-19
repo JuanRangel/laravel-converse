@@ -1,6 +1,7 @@
 <?php namespace Vsellis\Converse\Presenters;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class UserPresenter
 {
@@ -21,6 +22,6 @@ class UserPresenter
             return 'You';
         }
 
-        return $this->model->name;
+        return Str::of($this->model->name)->limit(15);
     }
 }

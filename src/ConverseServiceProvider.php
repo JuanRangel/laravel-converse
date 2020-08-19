@@ -42,9 +42,11 @@ class ConverseServiceProvider extends ServiceProvider
 
         Route::macro('converse', function (string $prefix) {
             Route::prefix($prefix)->group(function () {
-                Route::get('/', [ConversationController::class, 'index'])->name('conversations.index');
-                Route::get('{conversation:uuid}', [ConversationController::class, 'show'])->name('conversations.show')->middleware('bindings');
 
+                Route::middleware('auth')->group(function () {
+                    Route::get('/', [ConversationController::class, 'index'])->name('conversations.index');
+                    Route::get('{conversation:uuid}', [ConversationController::class, 'show'])->name('conversations.show')->middleware('bindings');
+                });
 
                 /**
                  * Broadcasting Channels
@@ -58,7 +60,6 @@ class ConverseServiceProvider extends ServiceProvider
         /**
          * Livewire Components
          */
-//        Livewire::component('converse::test-component', TestComponent::class);
         Livewire::component('converse::conversations.conversation-list', ConversationList::class);
         Livewire::component('converse::conversations.conversation-header', ConversationHeader::class);
         Livewire::component('converse::conversations.conversation-messages', ConversationMessages::class);
@@ -68,5 +69,8 @@ class ConverseServiceProvider extends ServiceProvider
     public function register() : void
     {
         $this->mergeConfigFrom(__DIR__.'/../config/converse.php', 'converse');
+        $this->app->singleton(Converse::class, function ($app) {
+            return new Converse;
+        });
     }
 }
