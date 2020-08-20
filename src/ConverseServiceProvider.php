@@ -12,7 +12,6 @@ use Vsellis\Converse\Http\Livewire\Conversations\ConversationHeader;
 use Vsellis\Converse\Http\Livewire\Conversations\ConversationList;
 use Vsellis\Converse\Http\Livewire\Conversations\ConversationMessages;
 use Vsellis\Converse\Http\Livewire\Conversations\ConversationReply;
-use Vsellis\Converse\Http\Livewire\TestComponent;
 
 class ConverseServiceProvider extends ServiceProvider
 {
@@ -42,7 +41,6 @@ class ConverseServiceProvider extends ServiceProvider
 
         Route::macro('converse', function (string $prefix) {
             Route::prefix($prefix)->group(function () {
-
                 Route::middleware('auth')->group(function () {
                     Route::get('/', [ConversationController::class, 'index'])->name('conversations.index');
                     Route::get('{conversation:uuid}', [ConversationController::class, 'show'])->name('conversations.show')->middleware('bindings');
