@@ -1,4 +1,4 @@
-@extends('converse::layouts.converse')
+@extends(config('converse.layout'))
 
 @push('styles')
     <style>

@@ -22,6 +22,7 @@ return [
          * This is the model for indiviual messages
          */
         'message' => Vsellis\Converse\Models\Message::class,
+    ],
 
-    ]
+    'layout' => 'converse::layouts.converse'
 ];

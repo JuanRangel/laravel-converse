@@ -8,7 +8,7 @@ use Vsellis\Converse\Tests\User;
 class ViewConversationsTest extends TestCase
 {
     /** @test */
-    public function a_list_of_conversations()
+    public function the_index_shows_the_latest_conversation()
     {
         $this->withoutExceptionHandling();
 
@@ -18,15 +18,14 @@ class ViewConversationsTest extends TestCase
 
         $response = $this->actingAs($user)->get('/conversations');
 
-        $response->assertOk();
-        $response->assertViewIs('converse::conversations.index');
-        $response->assertViewHas('conversations');
-        $response->assertSee('Your Conversations');
+        $response->assertRedirect(route('conversations.show', Conversation::first()));
     }
 
     /** @test */
     public function a_user_can_view_a_conversation()
     {
+        $this->withoutExceptionHandling();
+
         $conversation = factory(Conversation::class)->create();
         $user = User::first();
         $user2 = User::find(2);
@@ -44,8 +43,5 @@ class ViewConversationsTest extends TestCase
         $response->assertOk();
         $response->assertViewIs('converse::conversations.show');
         $response->assertViewHas('conversation');
-
-        $response->assertSee('Jane Doe');
-        $response->assertSee('Hello, world');
     }
 }

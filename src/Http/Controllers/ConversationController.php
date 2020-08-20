@@ -6,11 +6,9 @@ use Vsellis\Converse\Models\Conversation;
 
 class ConversationController
 {
-    public function index() : View
+    public function index()
     {
-        return view('converse::conversations.index', [
-            'conversations' => auth()->user()->conversations,
-        ]);
+        return redirect(route('conversations.show', auth()->user()->conversations->first()));
     }
 
     public function show(Conversation $conversation) : View

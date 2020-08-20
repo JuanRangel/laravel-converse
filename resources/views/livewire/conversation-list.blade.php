@@ -47,7 +47,7 @@
                         </p>
                         <div class="flex items-center text-sm text-gray-600">
                             <div class="min-w-0">
-                                <p class="truncate">Ok, see you at the subway in a bit.</p>
+                                <p class="truncate">...</p>
                             </div>
                             <p class="ml-2 whitespace-no-wrap">Just now</p>
                         </div>
