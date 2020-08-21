@@ -11,7 +11,7 @@ class ConversationUnitTest extends TestCase
     {
         $conversation = factory(Conversation::class)->create();
         $conversation->messages()->create(factory(Message::class)->raw([
-            'user_id' => 1,
+            'participant_id' => 1,
             'body' => 'Hello',
         ]));
 

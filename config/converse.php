@@ -1,5 +1,7 @@
 <?php
 
+use Vsellis\Converse\Tests\User;
+
 return [
 
     /**
@@ -22,6 +24,10 @@ return [
          * This is the model for indiviual messages
          */
         'message' => Vsellis\Converse\Models\Message::class,
+
+        'user' => User::class,
+
+        'secondary_user' => User::class,
     ],
 
     'layout' => 'converse::layouts.converse'

@@ -14,25 +14,42 @@ class CreateConverseTables extends Migration
             $table->timestamps();
         });
 
-        Schema::create('conversation_user', function (Blueprint $table) {
+//        Schema::create('conversation_user', function (Blueprint $table) {
+//            $table->bigInteger('conversation_id')->unsigned()->index();
+//            $table->bigInteger('user_id')->unsigned()->index();
+//
+//            $table->timestamps();
+//
+//            $table->foreign('conversation_id')->references('id')->on('conversations')->onDelete('cascade');
+//            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+//        });
+
+        Schema::create('conversation_facebook_page', function (Blueprint $table) {
             $table->bigInteger('conversation_id')->unsigned()->index();
-            $table->bigInteger('user_id')->unsigned()->index();
+            $table->bigInteger('page_id')->unsigned()->index();
 
             $table->timestamps();
 
             $table->foreign('conversation_id')->references('id')->on('conversations')->onDelete('cascade');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('page_id')->references('id')->on('pages')->onDelete('cascade');
+        });
+
+        Schema::create('pages', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->string('page_id');
+            $table->timestamps();
         });
 
         Schema::create('messages', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('conversation_id')->unsigned()->index();
-            $table->bigInteger('user_id')->unsigned()->index();
+            $table->bigInteger('participant_id')->unsigned()->index();
             $table->text('body');
             $table->timestamps();
 
             $table->foreign('conversation_id')->references('id')->on('conversations')->onDelete('cascade');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('participant_id')->references('id')->on('participants')->onDelete('cascade');
         });
     }
 
@@ -46,5 +63,6 @@ class CreateConverseTables extends Migration
         Schema::dropIfExists('conversations');
         Schema::dropIfExists('conversation_user');
         Schema::dropIfExists('messages');
+        Schema::dropIfExists('pages');
     }
 }

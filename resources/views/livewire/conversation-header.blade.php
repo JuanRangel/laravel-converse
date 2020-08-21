@@ -9,8 +9,8 @@
             </div>
             <div class="text-sm">
                 <p class="font-bold mb-2">
-                    @foreach($conversation->users as $user)
-                        {{$user->present()->name()}}{{$loop->last ? null : ','}}
+                    @foreach($conversation->participants as $participant)
+                        {{$participant->present()->name()}}{{$loop->last ? null : ','}}
                     @endforeach
                 </p>
                 <p>Active 1h ago</p>

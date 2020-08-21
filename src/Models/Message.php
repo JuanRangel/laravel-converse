@@ -1,5 +1,6 @@
 <?php namespace Vsellis\Converse\Models;
 
+use App\Participant;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Vsellis\Converse\Traits\Encryptable;
@@ -17,8 +18,8 @@ class Message extends Model
         return $this->belongsTo(config('converse.models.conversation'));
     }
 
-    public function user() : BelongsTo
+    public function participant() : BelongsTo
     {
-        return $this->belongsTo(config('auth.providers.users.model'));
+        return $this->belongsTo(config('converse.models.secondary_user'));
     }
 }

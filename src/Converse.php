@@ -2,23 +2,24 @@
 
 namespace Vsellis\Converse;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use Vsellis\Converse\Events\MessageAdded;
 use Vsellis\Converse\Models\Conversation;
 
 class Converse
 {
-    public static function createConversation($user)
+    public static function createConversation(Model $model)
     {
-        return $user->conversations()->create([
+        return $model->conversations()->create([
             'uuid' => Str::uuid(),
         ]);
     }
 
-    public static function createMessage(Conversation $conversation, $user, string $body)
+    public static function createMessage(Conversation $conversation, $participant, string $body)
     {
         $message = $conversation->messages()->create([
-            'user_id' => $user->id,
+            'participant_id' => $participant->id,
             'body' => $body,
         ]);
 

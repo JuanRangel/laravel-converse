@@ -10,11 +10,21 @@ class Conversation extends Model
     
     public function users() : BelongsToMany
     {
-        return $this->belongsToMany(config('auth.providers.users.model'));
+        return $this->belongsToMany(config('converse.models.user'));
+    }
+
+    public function participants()
+    {
+        return $this->belongsToMany(config('converse.models.secondary_user'));
     }
 
     public function messages(): HasMany
     {
         return $this->hasMany(config('converse.models.message'));
+    }
+    
+    public function addParticipant($user)
+    {
+        $this->participants()->attach($user);
     }
 }

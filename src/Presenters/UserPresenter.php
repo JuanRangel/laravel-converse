@@ -18,9 +18,9 @@ class UserPresenter
 
     public function name() : string
     {
-        if ($this->model->id === auth()->id()) {
-            return 'You';
-        }
+//        if ($this->model->id === auth()->id()) {
+//            return 'You';
+//        }
 
         return Str::of($this->model->name)->limit(15);
     }

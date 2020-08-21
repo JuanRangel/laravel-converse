@@ -15,7 +15,7 @@ class ConversationController
     {
         return view('converse::conversations.show', [
             'conversation' => $conversation,
-            'conversations' => auth()->user()->conversations,
+            'conversations' => $conversation->users->first()->conversations,
         ]);
     }
 }

@@ -38,10 +38,11 @@ class ConverseServiceProvider extends ServiceProvider
         }
 
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'converse');
-
+        
         Route::macro('converse', function (string $prefix) {
             Route::prefix($prefix)->group(function () {
                 Route::middleware('auth')->group(function () {
+                    Route::get('/fb{page_id}/conversations', 'FacebookPageConversationController@index')->name('facebook_pages.conversations.index');
                     Route::get('/', [ConversationController::class, 'index'])->name('conversations.index');
                     Route::get('{conversation:uuid}', [ConversationController::class, 'show'])->name('conversations.show')->middleware('bindings');
                 });
@@ -50,6 +51,7 @@ class ConverseServiceProvider extends ServiceProvider
                  * Broadcasting Channels
                  */
                 Broadcast::channel('conversations.{id}', function ($user, $id) {
+                    return true; // TODO
                     return $user->inConversation($id);
                 });
             });

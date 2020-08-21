@@ -55,5 +55,7 @@ class TestCase extends Orchestra
 
         User::create(['email' => 'john@example.com', 'name' => 'John Doe']);
         User::create(['email' => 'jane@example.com', 'name' => 'Jane Doe']);
+        Page::create(['name' => 'Test Facebook Page 1', 'page_id' => 1]);
+        Page::create(['name' => 'Test Facebook Page 2', 'page_id' => 2]);
     }
 }
