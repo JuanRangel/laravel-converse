@@ -29,6 +29,5 @@ class CreateConversationServiceTest extends TestCase
         $conversation->addParticipant(User::find(2));
 
         $this->assertCount(3, $conversation->participants);
-
     }
 }

@@ -1,6 +1,5 @@
 <?php namespace Vsellis\Converse\Traits;
 
-use App\Participant;
 use Vsellis\Converse\Models\Conversation;
 use Vsellis\Converse\Presenters\UserPresenter;
 
@@ -20,5 +19,4 @@ trait CanConverse
     {
         return $this->conversations->contains('id', $id);
     }
-
 }

@@ -2,7 +2,6 @@
 
 use Vsellis\Converse\Converse;
 use Vsellis\Converse\Models\Conversation;
-use Vsellis\Converse\Models\Message;
 use Vsellis\Converse\Tests\Page;
 use Vsellis\Converse\Tests\TestCase;
 use Vsellis\Converse\Tests\User;
