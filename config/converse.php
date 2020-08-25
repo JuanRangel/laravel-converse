@@ -26,6 +26,9 @@ return [
          */
         'message' => Vsellis\Converse\Models\Message::class,
 
+        /**
+         * All modes that should be able to participate in a conversation
+         */
         'conversables' => [
             'users' => User::class,
             'pages' => Page::class,

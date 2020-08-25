@@ -20,11 +20,11 @@ class ConverseServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../config/laravel-converse.php' => config_path('laravel-converse.php'),
+                __DIR__.'/../config/converse.php' => config_path('converse.php'),
             ], 'config');
 
             $this->publishes([
-                __DIR__.'/../resources/views' => base_path('resources/views/vendor/laravel-converse'),
+                __DIR__.'/../resources/views' => base_path('resources/views/vendor/converse'),
             ], 'views');
 
             if (!class_exists('CreatePackageTable')) {
