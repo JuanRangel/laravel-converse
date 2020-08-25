@@ -2,7 +2,6 @@
 
 use Vsellis\Converse\Converse;
 use Vsellis\Converse\Models\Conversation;
-use Vsellis\Converse\Models\Message;
 use Vsellis\Converse\Tests\TestCase;
 use Vsellis\Converse\Tests\User;
 
@@ -14,7 +13,7 @@ class ViewConversationsTest extends TestCase
         $this->withoutExceptionHandling();
 
         $conversations = factory(Conversation::class)->raw();
-        $user          = User::first();
+        $user = User::first();
         $user->conversations()->create($conversations);
 
         $response = $this->actingAs($user)->get('/conversations');
@@ -28,8 +27,8 @@ class ViewConversationsTest extends TestCase
         $this->withoutExceptionHandling();
 
         $conversation = factory(Conversation::class)->create();
-        $user         = User::first();
-        $user2        = User::find(2);
+        $user = User::first();
+        $user2 = User::find(2);
 
         $user->conversations()->attach($conversation);
         $user2->conversations()->attach($conversation);
