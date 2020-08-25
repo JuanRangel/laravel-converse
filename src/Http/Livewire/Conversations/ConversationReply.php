@@ -4,6 +4,7 @@ namespace Vsellis\Converse\Http\Livewire\Conversations;
 
 use Illuminate\View\View;
 use Livewire\Component;
+use Vsellis\Converse\Converse;
 use Vsellis\Converse\Events\MessageCreated;
 use Vsellis\Converse\Models\Conversation;
 use Vsellis\Converse\Services\CreateMessageService;
@@ -24,7 +25,7 @@ class ConversationReply extends Component
             'body' => 'required',
         ]);
 
-        $message = $messageService->create($this->conversation, auth()->user(), $this->body);
+        $message = Converse::createMessage($this->conversation, $this->conversation->users->first(), $this->body);
 
         $this->emit('message.created', $message->id);
         event(MessageCreated::class, $message->id);

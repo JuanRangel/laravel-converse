@@ -1,5 +1,6 @@
 <?php namespace Vsellis\Converse\Traits;
 
+use App\Participant;
 use Vsellis\Converse\Models\Conversation;
 use Vsellis\Converse\Presenters\UserPresenter;
 
@@ -7,7 +8,7 @@ trait CanConverse
 {
     public function conversations()
     {
-        return $this->belongsToMany(Conversation::class)->withTimestamps();
+        return $this->morphToMany(Conversation::class, 'conversable')->withTimestamps();
     }
 
     public function present()
@@ -19,4 +20,5 @@ trait CanConverse
     {
         return $this->conversations->contains('id', $id);
     }
+
 }

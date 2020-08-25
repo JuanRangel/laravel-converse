@@ -1,5 +1,6 @@
 <?php
 
+use Vsellis\Converse\Tests\Page;
 use Vsellis\Converse\Tests\User;
 
 return [
@@ -25,9 +26,10 @@ return [
          */
         'message' => Vsellis\Converse\Models\Message::class,
 
-        'user' => User::class,
-
-        'secondary_user' => User::class,
+        'conversables' => [
+            'users' => User::class,
+            'pages' => Page::class,
+        ],
     ],
 
     'layout' => 'converse::layouts.converse'

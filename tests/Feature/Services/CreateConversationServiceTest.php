@@ -23,9 +23,8 @@ class CreateConversationServiceTest extends TestCase
     /** @test */
     public function a_conversation_can_have_participants()
     {
-        $conversation = factory(Conversation::class)->create();
-
         $conversation = Converse::createConversation(Page::first());
+
         $conversation->addParticipant(User::first());
         $conversation->addParticipant(User::find(2));
 

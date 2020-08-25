@@ -16,10 +16,11 @@ class Converse
         ]);
     }
 
-    public static function createMessage(Conversation $conversation, $participant, string $body)
+    public static function createMessage(Conversation $conversation, $messageable, string $body)
     {
         $message = $conversation->messages()->create([
-            'participant_id' => $participant->id,
+            'messageable_id' => $messageable->id,
+            'messageable_type' => get_class($messageable),
             'body' => $body,
         ]);
 

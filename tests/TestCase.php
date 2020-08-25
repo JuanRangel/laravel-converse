@@ -37,6 +37,10 @@ class TestCase extends Orchestra
             'prefix' => '',
         ]);
         $app['config']->set('auth.providers.users.model', User::class);
+        $app['config']->set('models.conversables', [
+            'users' => User::class,
+            'pages' => Page::class,
+        ]);
 
         $app['config']->set('app.key', 'base64:Hupx3yAySikrM2/edkZQNQHslgDWYfiBfCuSThJ5SK8=');
 
@@ -50,6 +54,13 @@ class TestCase extends Orchestra
             $table->increments('id');
             $table->string('email');
             $table->string('name');
+            $table->softDeletes();
+        });
+
+        $app['db']->connection()->getSchemaBuilder()->create('pages', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->integer('page_id');
             $table->softDeletes();
         });
 

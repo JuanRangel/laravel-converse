@@ -2,6 +2,7 @@
 
 namespace Vsellis\Converse;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
@@ -26,7 +27,7 @@ class ConverseServiceProvider extends ServiceProvider
                 __DIR__.'/../resources/views' => base_path('resources/views/vendor/laravel-converse'),
             ], 'views');
 
-            if (! class_exists('CreatePackageTable')) {
+            if (!class_exists('CreatePackageTable')) {
                 $this->publishes([
                     __DIR__.'/../database/migrations/create_converse_tables.php.stub' => database_path('migrations/'.date('Y_m_d_His', time()).'_create_converse_tables.php'),
                 ], 'migrations');
@@ -38,7 +39,7 @@ class ConverseServiceProvider extends ServiceProvider
         }
 
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'converse');
-        
+
         Route::macro('converse', function (string $prefix) {
             Route::prefix($prefix)->group(function () {
                 Route::middleware('auth')->group(function () {

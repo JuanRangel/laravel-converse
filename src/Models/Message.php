@@ -22,4 +22,8 @@ class Message extends Model
     {
         return $this->belongsTo(config('converse.models.secondary_user'));
     }
+    public function messageable()
+    {
+        return $this->morphTo();
+    }
 }
