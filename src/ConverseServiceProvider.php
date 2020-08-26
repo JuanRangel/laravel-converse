@@ -41,7 +41,6 @@ class ConverseServiceProvider extends ServiceProvider
 
         Route::macro('converse', function (string $prefix) {
             Route::prefix($prefix)->group(function () {
-
                 Route::middleware('auth')->group(function () {
                     Route::get('/fb{page_id}/conversations', 'FacebookPageConversationController@index')->name('facebook_pages.conversations.index');
                     Route::get('/', [ConversationController::class, 'index'])->name('conversations.index');
