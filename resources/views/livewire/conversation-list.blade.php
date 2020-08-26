@@ -1,11 +1,11 @@
-<section class="flex flex-col flex-none overflow-auto w-24 hover:w-64 group lg:max-w-sm md:w-2/5 transition-all duration-300 ease-in-out border-r bg-gray-100">
+<section class="flex flex-col flex-none overflow-auto w-24 hover:w-64 group lg:max-w-sm md:w-2/5 transition-all duration-300 ease-in-out bg-gray-100">
     <div class="header p-4 flex flex-row justify-between items-center flex-none">
         <div class="w-16 h-16 relative flex flex-shrink-0">
             <img class="rounded-full w-full h-full object-cover" alt="ravisankarchinnam"
-                 src="{{config('converse.logo')}}"/>
+                 src="{{$conversations[0]->participants[0]->profile_pic}}"/>
         </div>
-        <p class="text-md font-bold hidden md:block group-hover:block">{{env('APP_NAME')}}</p>
-        <a href="#" class="block rounded-full hover:bg-gray-400 bg-gray-300 w-10 h-10 p-2 hidden md:block group-hover:block">
+        <p class="text-md font-bold text-gray-800 hidden md:block group-hover:block">{{$conversations[0]->participants[0]->name}}</p>
+        <a href="#" class="block rounded-full hover:bg-gray-700 bg-gray-600 w-10 h-10 p-2 hidden md:block group-hover:block">
             <svg viewBox="0 0 24 24" class="w-full h-full fill-current">
                 <path
                     d="M6.3 12.3l10-10a1 1 0 0 1 1.4 0l4 4a1 1 0 0 1 0 1.4l-10 10a1 1 0 0 1-.7.3H7a1 1 0 0 1-1-1v-4a1 1 0 0 1 .3-.7zM8 16h2.59l9-9L17 4.41l-9 9V16zm10-2a1 1 0 0 1 2 0v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6c0-1.1.9-2 2-2h6a1 1 0 0 1 0 2H4v14h14v-6z"/>
@@ -31,17 +31,17 @@
     <div class="contacts p-2 flex-1 overflow-y-scroll">
 
         @foreach($conversations as $conversation)
-            <a href="{{route('conversations.show', $conversation)}}">
+            <a href="{{route('facebook_pages.conversations.show',[ $conversation->facebookPages->first()->page_id, $conversation->uuid])}}">
                 <div class="flex justify-between items-center p-3 hover:bg-gray-300 rounded-lg relative">
                     <div class="w-16 h-16 relative flex flex-shrink-0">
                         <img class="shadow-md rounded-full w-full h-full object-cover"
-                             src="https://randomuser.me/api/portraits/women/61.jpg"
+                             src="{{$conversation->participants[1]->profile_pic}}"
                              alt=""
                         />
                     </div>
                     <div class="flex-auto min-w-0 ml-4 mr-6 hidden md:block group-hover:block">
-                        <p>
-                            @foreach($conversation->users as $user)
+                        <p class="text-gray-800">
+                            @foreach($conversation->participants as $user)
                                 {{$user->present()->name()}}{{$loop->last ? null : ','}}
                             @endforeach
                         </p>

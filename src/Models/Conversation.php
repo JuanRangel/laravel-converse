@@ -26,7 +26,6 @@ class Conversation extends Model
     public function addParticipant($conversable)
     {
         return $conversable->conversations()->attach($this);
-//        return $this->
     }
 
     protected static function boot()

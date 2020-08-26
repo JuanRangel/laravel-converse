@@ -14,11 +14,11 @@ class CreateMessageServiceTest extends TestCase
     public function it_can_create_a_message()
     {
         $user = User::first();
-
-        $conversation = Converse::createConversation($user);
+        $user2 = User::find(2);
+        $conversation = Converse::createConversation($user, $user2);
         $message = Converse::createMessage($conversation, $user, 'I like turtles');
 
         $this->assertNotNull($message);
-        $this->assertNotNull(Message::first());
+        $this->count(2, $conversation->messages);
     }
 }

@@ -1,6 +1,7 @@
 <div id="chat-body" class="chat-body p-4 flex-1 overflow-y-scroll">
     @foreach($messages as $message)
-        <div class="flex flex-row mt-4 {{auth()->id() === $message->user_id ? 'justify-end text-right' : 'justify-start'}}">
+        {{$message->messageable_id}}
+        <div class="flex flex-row mt-4 {{auth()->id() === $message->messageable_id ? 'justify-end text-right' : 'justify-start'}}">
             <div class="messages text-sm text-gray-700 grid grid-flow-row gap-2 {{auth()->id() === $message->user_id ? 'flex-row-reverse' : ''}}">
                 {{$message->messageable->present()->name()}}
                 <div class="flex items-center group ">

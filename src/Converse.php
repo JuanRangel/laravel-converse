@@ -9,11 +9,16 @@ use Vsellis\Converse\Models\Conversation;
 
 class Converse
 {
-    public static function createConversation(Model $model)
+    public static function createConversation($sender, $recipient)
     {
-        return $model->conversations()->create([
+        $conversation = $sender->conversations()->create([
             'uuid' => Str::uuid(),
         ]);
+
+        $conversation->addParticipant($recipient);
+
+
+        return $conversation;
     }
 
     public static function createMessage(Conversation $conversation, $messageable, string $body)
