@@ -22,7 +22,7 @@ class UserPresenter
 //            return 'You';
 //        }
 
-        if(isset($this->model->first_name) && isset($this->model->last_name)) {
+        if (isset($this->model->first_name) && isset($this->model->last_name)) {
             return $this->model->first_name . ' ' . $this->model->last_name;
         }
 

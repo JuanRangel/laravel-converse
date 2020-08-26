@@ -2,7 +2,6 @@
 
 namespace Vsellis\Converse;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use Vsellis\Converse\Events\MessageAdded;
 use Vsellis\Converse\Models\Conversation;
