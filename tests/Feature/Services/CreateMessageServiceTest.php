@@ -3,7 +3,6 @@
 namespace Vsellis\Converse\Tests\Feature\Services;
 
 use Vsellis\Converse\Converse;
-use Vsellis\Converse\Models\Message;
 use Vsellis\Converse\Tests\TestCase;
 use Vsellis\Converse\Tests\User;
 
