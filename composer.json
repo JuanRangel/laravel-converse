@@ -34,7 +34,7 @@
   "autoload": {
     "psr-4": {
       "JuanRangel\\Converse\\": "src"
-    }g
+    }
   },
   "autoload-dev": {
     "psr-4": {
