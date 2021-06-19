@@ -18,7 +18,7 @@ class Conversation extends Model
     {
         $all = collect();
 
-        foreach (config('converse.models.conversables') as $name => $conversable) {
+        foreach (array_keys(config('converse.models.conversables')) as $name) {
             $all->push($this->$name);
         }
 
