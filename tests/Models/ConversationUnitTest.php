@@ -2,7 +2,6 @@
 
 use JuanRangel\Converse\Converse;
 use JuanRangel\Converse\Models\Conversation;
-use JuanRangel\Converse\Tests\Page;
 use JuanRangel\Converse\Tests\TestCase;
 use JuanRangel\Converse\Tests\User;
 

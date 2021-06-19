@@ -4,9 +4,9 @@ namespace JuanRangel\Converse\Tests;
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Route;
+use JuanRangel\Converse\ConverseServiceProvider;
 use Livewire\LivewireServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
-use JuanRangel\Converse\ConverseServiceProvider;
 
 class TestCase extends Orchestra
 {

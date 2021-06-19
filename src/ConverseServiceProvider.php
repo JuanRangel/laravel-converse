@@ -50,7 +50,6 @@ class ConverseServiceProvider extends ServiceProvider
                  * Broadcasting Channels
                  */
                 Broadcast::channel('conversations.{id}', function ($user, $id) {
-
                     return $user->inConversation($id);
                 });
             });
