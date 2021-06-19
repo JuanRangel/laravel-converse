@@ -1,10 +1,15 @@
 <?php
 
+use Faker\Factory;
 use \Faker\Generator;
 use JuanRangel\Converse\Models\Message;
 
-/* @var Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(Message::class, function (Generator $faker) {
-    return [
-    ];
-});
+class MessageFactory extends Factory
+{
+    protected $model = Message::class;
+
+    public function definition()
+    {
+        return [];
+    }
+}

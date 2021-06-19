@@ -14,6 +14,13 @@ class Conversation extends Model
         return $this->hasMany(config('converse.models.message'));
     }
 
+    public function getLastMessageTimeAttribute()
+    {
+
+        return $this->messages->last()->created_at->diffForHumans();
+//        return $this->messages->last()->created_at->format('n/d/Y g:i');
+    }
+
     public function getParticipantsAttribute()
     {
         $all = collect();

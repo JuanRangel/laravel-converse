@@ -43,7 +43,11 @@
                             <div class="min-w-0">
                                 <p class="truncate">...</p>
                             </div>
-                            <p class="ml-2 whitespace-no-wrap">Just now</p>
+                            @if($conversation->messages->count() > 0)
+                                <p class="ml-2 whitespace-no-wrap">{{$conversation->last_message_time}}</p>
+                                @else
+                                <p class="ml-2 whitespace-no-wrap">No messages</p>
+                            @endif
                         </div>
                     </div>
                 </div>

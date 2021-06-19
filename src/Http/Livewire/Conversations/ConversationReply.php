@@ -25,7 +25,7 @@ class ConversationReply extends Component
             'body' => 'required',
         ]);
 
-        $message = Converse::createMessage($this->conversation, $this->conversation->facebookPages->first(), $this->body);
+        $message = Converse::createMessage($this->conversation, auth()->user(), $this->body);
 
         $this->emit('message.created', $message->id);
         event(MessageCreated::class, $message->id);
