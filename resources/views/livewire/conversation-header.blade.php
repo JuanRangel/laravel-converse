@@ -3,7 +3,7 @@
         <div class="flex">
             <div class="w-12 h-12 mr-4 relative flex flex-shrink-0">
                 <img class="shadow-md rounded-full w-full h-full object-cover"
-                     src="{{$conversation->participants[0]->profile_pic}}"
+                     src="{{$conversation->participants[0]->profile_photo_url}}"
                      alt=""
                 />
             </div>
@@ -13,7 +13,7 @@
                         {{$user->present()->name()}}{{$loop->last ? null : ','}}
                     @endforeach
                 </p>
-                <p>Active 1h ago</p>
+                <p>Started {{$conversation->created_at->diffForHumans()}}</p>
             </div>
         </div>
     </div>

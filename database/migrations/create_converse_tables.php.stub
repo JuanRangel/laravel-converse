@@ -28,7 +28,7 @@ class CreateConverseTables extends Migration
             $table->id();
             $table->bigInteger('conversation_id')->unsigned()->index();
             $table->bigInteger('messageable_id');
-            $table->bigInteger('messageable_type');
+            $table->string('messageable_type');
             $table->text('body');
             $table->timestamps();
         });
