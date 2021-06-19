@@ -1,4 +1,4 @@
-<?php namespace Vsellis\Converse\Http\Livewire;
+<?php namespace JuanRangel\Converse\Http\Livewire;
 
 use Illuminate\View\View;
 use Livewire\Component;

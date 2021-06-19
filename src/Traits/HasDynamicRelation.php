@@ -1,4 +1,6 @@
-<?php namespace Vsellis\Converse\Traits;
+<?php
+
+namespace JuanRangel\Converse\Traits;
 
 trait HasDynamicRelation
 {

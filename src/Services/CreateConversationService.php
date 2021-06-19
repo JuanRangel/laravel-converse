@@ -1,7 +1,9 @@
-<?php namespace Vsellis\Converse\Services;
+<?php
+
+namespace JuanRangel\Converse\Services;
 
 use Illuminate\Support\Str;
-use Vsellis\Converse\Models\Conversation;
+use JuanRangel\Converse\Models\Conversation;
 
 class CreateConversationService
 {

@@ -1,11 +1,11 @@
 <?php
 
-namespace Vsellis\Converse\Events;
+namespace JuanRangel\Converse\Events;
 
 use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
-use Vsellis\Converse\Models\Message;
+use JuanRangel\Converse\Models\Message;
 
 class MessageCreated
 {

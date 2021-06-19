@@ -1,6 +1,6 @@
 <?php
 
-namespace Vsellis\Converse\Commands;
+namespace JuanRangel\Converse\Commands;
 
 use Illuminate\Console\Command;
 

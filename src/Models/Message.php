@@ -1,9 +1,9 @@
-<?php namespace Vsellis\Converse\Models;
+<?php namespace JuanRangel\Converse\Models;
 
 use App\Participant;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Vsellis\Converse\Traits\Encryptable;
+use JuanRangel\Converse\Traits\Encryptable;
 
 class Message extends Model
 {

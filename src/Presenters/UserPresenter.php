@@ -1,4 +1,4 @@
-<?php namespace Vsellis\Converse\Presenters;
+<?php namespace JuanRangel\Converse\Presenters;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;

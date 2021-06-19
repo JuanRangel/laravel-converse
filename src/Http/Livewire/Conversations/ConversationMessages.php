@@ -1,11 +1,11 @@
 <?php
 
-namespace Vsellis\Converse\Http\Livewire\Conversations;
+namespace JuanRangel\Converse\Http\Livewire\Conversations;
 
 use Illuminate\View\View;
 use Livewire\Component;
-use Vsellis\Converse\Models\Conversation;
-use Vsellis\Converse\Models\Message;
+use JuanRangel\Converse\Models\Conversation;
+use JuanRangel\Converse\Models\Message;
 
 class ConversationMessages extends Component
 {
@@ -28,7 +28,7 @@ class ConversationMessages extends Component
             /**
              * Echo Listeners
              */
-            "echo-private:conversations.{$this->conversationId},\Vsellis\Converse\Events\MessageAdded" => 'appendMessageFromBroadcast',
+            "echo-private:conversations.{$this->conversationId},\JuanRangel\Converse\Events\MessageAdded" => 'appendMessageFromBroadcast',
         ];
     }
 

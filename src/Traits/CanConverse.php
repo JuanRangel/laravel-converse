@@ -1,7 +1,7 @@
-<?php namespace Vsellis\Converse\Traits;
+<?php namespace JuanRangel\Converse\Traits;
 
-use Vsellis\Converse\Models\Conversation;
-use Vsellis\Converse\Presenters\UserPresenter;
+use JuanRangel\Converse\Models\Conversation;
+use JuanRangel\Converse\Presenters\UserPresenter;
 
 trait CanConverse
 {

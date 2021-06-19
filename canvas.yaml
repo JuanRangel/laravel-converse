@@ -1,6 +1,6 @@
 preset: package
 
-namespace: Vsellis\Converse
+namespace: JuanRangel\Converse
 user-auth-provider: App\User
 
 paths:
@@ -15,13 +15,13 @@ migration:
   prefix: ''
 
 console:
-  namespace: Vsellis\Converse\Console
+  namespace: JuanRangel\Converse\Console
 
 model:
-  namespace: Vsellis\Converse
+  namespace: JuanRangel\Converse
 
 provider:
-  namespace: Vsellis\Converse\Providers
+  namespace: JuanRangel\Converse\Providers
 
 testing:
-  namespace: Vsellis\Converse\Tests
+  namespace: JuanRangel\Converse\Tests

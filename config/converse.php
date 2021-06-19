@@ -1,5 +1,7 @@
 <?php
 
+use JuanRangel\Converse\Tests\User;
+
 return [
 
     /**
@@ -16,18 +18,18 @@ return [
         /**
          * This is the model where all conversations live
          */
-        'conversation' => Vsellis\Converse\Models\Conversation::class,
+        'conversation' => JuanRangel\Converse\Models\Conversation::class,
 
         /**
          * This is the model for indiviual messages
          */
-        'message' => Vsellis\Converse\Models\Message::class,
+        'message' => JuanRangel\Converse\Models\Message::class,
 
         /**
          * All modes that should be able to participate in a conversation
          */
         'conversables' => [
-            'users' => \App\Models\User::class,
+            'users' => User::class,
         ],
     ],
 

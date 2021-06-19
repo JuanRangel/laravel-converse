@@ -19,20 +19,20 @@ Add the CanConverse trait to your user model
 ```php
 class User
 {
-    use Vsellis\Converse\Traits\CanConverse;
+    use JuanRangel\Converse\Traits\CanConverse;
 }    
 ```
 
 You can publish and run the migrations with:
 
 ```bash
-php artisan vendor:publish --provider="Vsellis\Converse\ConverseServiceProvider" --tag="migrations"
+php artisan vendor:publish --provider="JuanRangel\Converse\ConverseServiceProvider" --tag="migrations"
 php artisan migrate
 ```
 
 You can publish the config file with:
 ```bash
-php artisan vendor:publish --provider="Vsellis\Converse\ConverseServiceProvider" --tag="config"
+php artisan vendor:publish --provider="JuanRangel\Converse\ConverseServiceProvider" --tag="config"
 ```
 
 This is the contents of the published config file:
@@ -93,8 +93,8 @@ Make sure that the `BroadcastServiceProvider` is active in `app.php`
 ## Usage
 
 ``` php
-$laravel-converse = new Vsellis\Converse();
-echo $laravel-converse->echoPhrase('Hello, Vsellis!');
+$laravel-converse = new JuanRangel\Converse();
+echo $laravel-converse->echoPhrase('Hello, JuanRangel!');
 ```
 
 We now have to install laravel-echo and pusher-js

@@ -1,13 +1,13 @@
 <?php
 
-namespace Vsellis\Converse\Http\Livewire\Conversations;
+namespace JuanRangel\Converse\Http\Livewire\Conversations;
 
 use Illuminate\View\View;
 use Livewire\Component;
-use Vsellis\Converse\Converse;
-use Vsellis\Converse\Events\MessageCreated;
-use Vsellis\Converse\Models\Conversation;
-use Vsellis\Converse\Services\CreateMessageService;
+use JuanRangel\Converse\Converse;
+use JuanRangel\Converse\Events\MessageCreated;
+use JuanRangel\Converse\Models\Conversation;
+use JuanRangel\Converse\Services\CreateMessageService;
 
 class ConversationReply extends Component
 {

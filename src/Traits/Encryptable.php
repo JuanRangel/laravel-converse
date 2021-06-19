@@ -1,4 +1,4 @@
-<?php namespace Vsellis\Converse\Traits;
+<?php namespace JuanRangel\Converse\Traits;
 
 use Illuminate\Contracts\Encryption\DecryptException;
 

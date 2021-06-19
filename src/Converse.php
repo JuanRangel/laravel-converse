@@ -1,10 +1,10 @@
 <?php
 
-namespace Vsellis\Converse;
+namespace JuanRangel\Converse;
 
 use Illuminate\Support\Str;
-use Vsellis\Converse\Events\MessageAdded;
-use Vsellis\Converse\Models\Conversation;
+use JuanRangel\Converse\Events\MessageAdded;
+use JuanRangel\Converse\Models\Conversation;
 
 class Converse
 {

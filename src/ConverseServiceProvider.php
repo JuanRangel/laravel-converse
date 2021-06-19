@@ -1,17 +1,17 @@
 <?php
 
-namespace Vsellis\Converse;
+namespace JuanRangel\Converse;
 
 use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Livewire\Livewire;
-use Vsellis\Converse\Commands\ConverseCommand;
-use Vsellis\Converse\Http\Controllers\ConversationController;
-use Vsellis\Converse\Http\Livewire\Conversations\ConversationHeader;
-use Vsellis\Converse\Http\Livewire\Conversations\ConversationList;
-use Vsellis\Converse\Http\Livewire\Conversations\ConversationMessages;
-use Vsellis\Converse\Http\Livewire\Conversations\ConversationReply;
+use JuanRangel\Converse\Commands\ConverseCommand;
+use JuanRangel\Converse\Http\Controllers\ConversationController;
+use JuanRangel\Converse\Http\Livewire\Conversations\ConversationHeader;
+use JuanRangel\Converse\Http\Livewire\Conversations\ConversationList;
+use JuanRangel\Converse\Http\Livewire\Conversations\ConversationMessages;
+use JuanRangel\Converse\Http\Livewire\Conversations\ConversationReply;
 
 class ConverseServiceProvider extends ServiceProvider
 {

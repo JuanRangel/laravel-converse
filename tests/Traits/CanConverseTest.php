@@ -1,8 +1,8 @@
-<?php namespace Vsellis\Converse\Tests\Traits;
+<?php namespace JuanRangel\Converse\Tests\Traits;
 
-use Vsellis\Converse\Converse;
-use Vsellis\Converse\Tests\TestCase;
-use Vsellis\Converse\Tests\User;
+use JuanRangel\Converse\Converse;
+use JuanRangel\Converse\Tests\TestCase;
+use JuanRangel\Converse\Tests\User;
 
 class CanConverseTest extends TestCase
 {

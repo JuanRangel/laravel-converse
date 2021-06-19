@@ -1,4 +1,4 @@
-<?php namespace Vsellis\Converse\Models;
+<?php namespace JuanRangel\Converse\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;

@@ -1,4 +1,4 @@
-<?php namespace Vsellis\Converse\Tests;
+<?php namespace JuanRangel\Converse\Tests;
 
 class UserTest extends TestCase
 {

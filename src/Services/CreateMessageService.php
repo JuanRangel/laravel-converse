@@ -1,8 +1,8 @@
-<?php namespace Vsellis\Converse\Services;
+<?php namespace JuanRangel\Converse\Services;
 
 use Illuminate\Database\Eloquent\Model;
-use Vsellis\Converse\Events\MessageAdded;
-use Vsellis\Converse\Models\Conversation;
+use JuanRangel\Converse\Events\MessageAdded;
+use JuanRangel\Converse\Models\Conversation;
 
 class CreateMessageService
 {

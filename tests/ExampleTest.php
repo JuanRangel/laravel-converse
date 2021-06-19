@@ -1,9 +1,9 @@
 <?php
 
-namespace Vsellis\Converse\Tests;
+namespace JuanRangel\Converse\Tests;
 
 use Livewire\Livewire;
-use Vsellis\Converse\Http\Livewire\TestComponent;
+use JuanRangel\Converse\Http\Livewire\TestComponent;
 
 class ExampleTest extends TestCase
 {

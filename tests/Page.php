@@ -1,7 +1,9 @@
-<?php namespace Vsellis\Converse\Tests;
+<?php
+
+namespace JuanRangel\Converse\Tests;
 
 use Illuminate\Database\Eloquent\Model;
-use Vsellis\Converse\Traits\CanConverse;
+use JuanRangel\Converse\Traits\CanConverse;
 
 class Page extends Model
 {

@@ -1,8 +1,8 @@
-<?php namespace Vsellis\Converse\Http\Controllers;
+<?php namespace JuanRangel\Converse\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
-use Vsellis\Converse\Models\Conversation;
+use JuanRangel\Converse\Models\Conversation;
 
 class ConversationController
 {

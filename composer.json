@@ -7,13 +7,13 @@
     "laravel",
     "messaging"
   ],
-  "homepage": "https://github.com/vsellis/laravel-converse",
+  "homepage": "https://github.com/juanrangel/laravel-converse",
   "license": "MIT",
   "authors": [
     {
       "name": "Juan",
       "email": "juan@vsellis.com",
-      "homepage": "https://vsellis.com",
+      "homepage": "https://juanrangel.com",
       "role": "Developer"
     }
   ],
@@ -32,7 +32,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Vsellis\\Converse\\": "src"
+      "JuanRangel\\Converse\\": "src"
     },
     "files": [
       "src/helpers.php"
@@ -40,7 +40,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Vsellis\\Converse\\Tests\\": "tests"
+      "JuanRangel\\Converse\\Tests\\": "tests"
     }
   },
   "scripts": {
@@ -55,10 +55,10 @@
   "extra": {
     "laravel": {
       "providers": [
-        "Vsellis\\Converse\\ConverseServiceProvider"
+        "JuanRangel\\Converse\\ConverseServiceProvider"
       ],
       "aliases": {
-        "Converse": "Vsellis\\Converse\\ConverseFacade"
+        "Converse": "JuanRangel\\Converse\\ConverseFacade"
       }
     }
   },

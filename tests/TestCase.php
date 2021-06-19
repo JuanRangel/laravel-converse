@@ -1,12 +1,12 @@
 <?php
 
-namespace Vsellis\Converse\Tests;
+namespace JuanRangel\Converse\Tests;
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Route;
 use Livewire\LivewireServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Vsellis\Converse\ConverseServiceProvider;
+use JuanRangel\Converse\ConverseServiceProvider;
 
 class TestCase extends Orchestra
 {

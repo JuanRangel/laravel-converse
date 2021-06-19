@@ -1,6 +1,6 @@
 <?php
 
-namespace Vsellis\Converse\Http\Livewire\Conversations;
+namespace JuanRangel\Converse\Http\Livewire\Conversations;
 
 use Illuminate\View\View;
 use Livewire\Component;

@@ -1,9 +1,11 @@
-<?php namespace Vsellis\Converse\Tests\Models;
+<?php
 
-use Vsellis\Converse\Converse;
-use Vsellis\Converse\Models\Conversation;
-use Vsellis\Converse\Tests\TestCase;
-use Vsellis\Converse\Tests\User;
+namespace JuanRangel\Converse\Tests\Models;
+
+use JuanRangel\Converse\Converse;
+use JuanRangel\Converse\Models\Conversation;
+use JuanRangel\Converse\Tests\TestCase;
+use JuanRangel\Converse\Tests\User;
 
 class ViewConversationsTest extends TestCase
 {

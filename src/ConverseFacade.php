@@ -1,11 +1,11 @@
 <?php
 
-namespace Vsellis\Converse;
+namespace JuanRangel\Converse;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \Vsellis\Converse\Converse
+ * @see \JuanRangel\Converse\Converse
  */
 class ConverseFacade extends Facade
 {

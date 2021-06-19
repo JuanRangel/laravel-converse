@@ -1,10 +1,10 @@
 <?php
 
-namespace Vsellis\Converse\Tests\Feature\Services;
+namespace JuanRangel\Converse\Tests\Feature\Services;
 
-use Vsellis\Converse\Converse;
-use Vsellis\Converse\Tests\TestCase;
-use Vsellis\Converse\Tests\User;
+use JuanRangel\Converse\Converse;
+use JuanRangel\Converse\Tests\TestCase;
+use JuanRangel\Converse\Tests\User;
 
 class CreateMessageServiceTest extends TestCase
 {

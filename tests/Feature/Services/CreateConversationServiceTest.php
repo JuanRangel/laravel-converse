@@ -1,12 +1,12 @@
 <?php
 
-namespace Vsellis\Converse\Tests\Feature\Services;
+namespace JuanRangel\Converse\Tests\Feature\Services;
 
-use Vsellis\Converse\Converse;
-use Vsellis\Converse\Models\Conversation;
-use Vsellis\Converse\Tests\Page;
-use Vsellis\Converse\Tests\TestCase;
-use Vsellis\Converse\Tests\User;
+use JuanRangel\Converse\Converse;
+use JuanRangel\Converse\Models\Conversation;
+use JuanRangel\Converse\Tests\Page;
+use JuanRangel\Converse\Tests\TestCase;
+use JuanRangel\Converse\Tests\User;
 
 class CreateConversationServiceTest extends TestCase
 {
