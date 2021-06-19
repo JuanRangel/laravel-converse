@@ -1,6 +1,6 @@
 {
-  "name": "jnrangel/laravel-converse",
-  "description": "A conversation package",
+  "name": "juanrangel/laravel-converse",
+  "description": "A real time chat package for laravel.",
   "keywords": [
     "vsellis",
     "laravel-converse",
