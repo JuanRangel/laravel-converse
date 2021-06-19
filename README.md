@@ -1,8 +1,8 @@
 # A conversation package
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/juanrangel/laravel-converse.svg?style=flat-square)](https://packagist.org/packages/juanrangel/laravel-converse)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/juanrangel/laravel-converse.svg?style=flat-square)](https://packagist.org/p2/juanrangel/laravel-converse)
 ![Tests workflow](https://github.com/juanrangel/laravel-converse/actions/workflows/run-tests.yml/badge.svg)
-[![Total Downloads](https://img.shields.io/packagist/dt/juanrangel/laravel-converse.svg?style=flat-square)](https://packagist.org/packages/juanrangel/laravel-converse)
+[![Total Downloads](https://img.shields.io/packagist/dt/juanrangel/laravel-converse.svg?style=flat-square)](https://packagist.org/p2/juanrangel/laravel-converse)
 
 
 This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
