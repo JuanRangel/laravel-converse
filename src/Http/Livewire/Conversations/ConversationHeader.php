@@ -3,8 +3,8 @@
 namespace JuanRangel\Converse\Http\Livewire\Conversations;
 
 use Illuminate\View\View;
-use Livewire\Component;
 use JuanRangel\Converse\Models\Conversation;
+use Livewire\Component;
 
 class ConversationHeader extends Component
 {

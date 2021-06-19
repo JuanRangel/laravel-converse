@@ -2,8 +2,8 @@
 
 namespace JuanRangel\Converse\Tests;
 
-use Livewire\Livewire;
 use JuanRangel\Converse\Http\Livewire\TestComponent;
+use Livewire\Livewire;
 
 class ExampleTest extends TestCase
 {
