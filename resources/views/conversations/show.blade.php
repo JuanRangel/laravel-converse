@@ -1,8 +1,5 @@
 @extends(config('converse.layout'))
 
-@push('styles')
-@endpush
-
 @section('content')
     <div class="main-content w-full">
         <div>

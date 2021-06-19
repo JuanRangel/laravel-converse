@@ -26,7 +26,7 @@ class ConverseServiceProvider extends ServiceProvider
                 __DIR__.'/../resources/views' => base_path('resources/views/vendor/converse'),
             ], 'views');
 
-            if (! class_exists('CreatePackageTable')) {
+            if (!class_exists('CreatePackageTable')) {
                 $this->publishes([
                     __DIR__.'/../database/migrations/create_converse_tables.php.stub' => database_path('migrations/'.date('Y_m_d_His', time()).'_create_converse_tables.php'),
                 ], 'migrations');
@@ -42,7 +42,6 @@ class ConverseServiceProvider extends ServiceProvider
         Route::macro('converse', function (string $prefix) {
             Route::prefix($prefix)->group(function () {
                 Route::middleware('auth')->group(function () {
-                    Route::get('/fb{page_id}/conversations', 'FacebookPageConversationController@index')->name('facebook_pages.conversations.index');
                     Route::get('/', [ConversationController::class, 'index'])->name('conversations.index');
                     Route::get('{conversation:uuid}', [ConversationController::class, 'show'])->name('conversations.show')->middleware('bindings');
                 });

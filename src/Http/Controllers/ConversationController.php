@@ -8,7 +8,7 @@ class ConversationController
 {
     public function index()
     {
-        return redirect(route('conversations.show', auth()->user()->conversations->first()));
+        return view('converse::conversations.index');
     }
 
     public function show(Conversation $conversation) : View
