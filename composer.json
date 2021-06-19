@@ -34,10 +34,7 @@
   "autoload": {
     "psr-4": {
       "JuanRangel\\Converse\\": "src"
-    },
-    "files": [
-      "src/helpers.php"
-    ]
+    }g
   },
   "autoload-dev": {
     "psr-4": {

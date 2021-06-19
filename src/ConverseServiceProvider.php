@@ -5,7 +5,6 @@ namespace JuanRangel\Converse;
 use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use JuanRangel\Converse\Commands\ConverseCommand;
 use JuanRangel\Converse\Http\Controllers\ConversationController;
 use JuanRangel\Converse\Http\Livewire\Conversations\ConversationHeader;
 use JuanRangel\Converse\Http\Livewire\Conversations\ConversationList;
@@ -31,10 +30,6 @@ class ConverseServiceProvider extends ServiceProvider
                     __DIR__.'/../database/migrations/create_converse_tables.php.stub' => database_path('migrations/'.date('Y_m_d_His', time()).'_create_converse_tables.php'),
                 ], 'migrations');
             }
-
-            $this->commands([
-                ConverseCommand::class,
-            ]);
         }
 
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'converse');
