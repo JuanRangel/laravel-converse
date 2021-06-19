@@ -22,17 +22,13 @@ class ConversationUnitTest extends TestCase
     }
 
     /** @test */
-    public function a_conversation_can_have_multiple_participant_types()
+    public function it_can_get_the_other_participant()
     {
         $conversation = factory(Conversation::class)->create();
 
-        $conversation->users()->attach(User::first());
-        $conversation->pages()->attach(Page::first());
-        $this->assertCount(1, $conversation->users);
-        $this->assertCount(1, $conversation->pages);
-        $this->assertCount(2, $conversation->participants);
+        $conversation->addParticipant(User::first());
+        $conversation->addParticipant(User::find(2));
 
-        $this->assertEquals('John Doe', $conversation->participants->first()->name);
-        $this->assertEquals('Test Facebook Page 1', $conversation->participants[1]->name);
+        $this->assertEquals('Jane Doe', $conversation->getOtherParticipant(User::first())->name);
     }
 }

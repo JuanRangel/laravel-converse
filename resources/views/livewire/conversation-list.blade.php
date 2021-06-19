@@ -25,7 +25,7 @@
     <div class="contacts p-2 flex-1 overflow-y-scroll">
 
         @foreach($conversations as $conversation)
-            <a href="{{route('conversations.show',[ $conversation, $conversation->uuid])}}">
+            <a href="{{route('conversations.show',[ $conversation])}}">
                 <div class="flex justify-between items-center p-3 hover:bg-gray-300 rounded-lg relative">
                     <div class="w-16 h-16 relative flex flex-shrink-0">
                         <img class="shadow-md rounded-full w-full h-full object-cover"

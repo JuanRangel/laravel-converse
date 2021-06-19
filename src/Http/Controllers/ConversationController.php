@@ -9,7 +9,7 @@ class ConversationController
     public function index()
     {
         return view('converse::conversations.index', [
-            'conversations' => auth()->user()->conversations
+            'conversations' => auth()->user()->conversations,
         ]);
     }
 

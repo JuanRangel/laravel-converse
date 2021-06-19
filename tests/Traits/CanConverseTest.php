@@ -13,7 +13,7 @@ class CanConverseTest extends TestCase
         $user = User::first();
         $this->actingAs($user);
 
-        Converse::createConversation($user);
+        Converse::createConversation($user, User::find(2));
 
         $this->assertTrue($user->inConversation(1));
     }

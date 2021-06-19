@@ -21,7 +21,7 @@ return [
         'conversation' => JuanRangel\Converse\Models\Conversation::class,
 
         /**
-         * This is the model for indiviual messages
+         * This is the model for individual messages
          */
         'message' => JuanRangel\Converse\Models\Message::class,
 

@@ -22,10 +22,15 @@ class Conversation extends Model
 
         return $all->flatten();
     }
-    
+
     public function addParticipant($conversable)
     {
         return $conversable->conversations()->attach($this);
+    }
+
+    public function getOtherParticipant($model)
+    {
+        return $this->participants->where('id', '!=', $model->id)->first();
     }
 
     protected static function boot()

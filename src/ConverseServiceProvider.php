@@ -5,13 +5,13 @@ namespace JuanRangel\Converse;
 use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
-use Livewire\Livewire;
 use JuanRangel\Converse\Commands\ConverseCommand;
 use JuanRangel\Converse\Http\Controllers\ConversationController;
 use JuanRangel\Converse\Http\Livewire\Conversations\ConversationHeader;
 use JuanRangel\Converse\Http\Livewire\Conversations\ConversationList;
 use JuanRangel\Converse\Http\Livewire\Conversations\ConversationMessages;
 use JuanRangel\Converse\Http\Livewire\Conversations\ConversationReply;
+use Livewire\Livewire;
 
 class ConverseServiceProvider extends ServiceProvider
 {
@@ -26,7 +26,7 @@ class ConverseServiceProvider extends ServiceProvider
                 __DIR__.'/../resources/views' => base_path('resources/views/vendor/converse'),
             ], 'views');
 
-            if (!class_exists('CreatePackageTable')) {
+            if (! class_exists('CreatePackageTable')) {
                 $this->publishes([
                     __DIR__.'/../database/migrations/create_converse_tables.php.stub' => database_path('migrations/'.date('Y_m_d_His', time()).'_create_converse_tables.php'),
                 ], 'migrations');
@@ -41,9 +41,9 @@ class ConverseServiceProvider extends ServiceProvider
 
         Route::macro('converse', function (string $prefix) {
             Route::prefix($prefix)->group(function () {
-                Route::middleware('auth')->group(function () {
-                    Route::get('/', [ConversationController::class, 'index'])->name('conversations.index');
-                    Route::get('{conversation:uuid}', [ConversationController::class, 'show'])->name('conversations.show');
+                Route::middleware('web')->group(function () {
+                    Route::get('/', [ConversationController::class, 'index'])->name('conversations.index')->middleware('auth');
+                    Route::get('{conversation:uuid}', [ConversationController::class, 'show'])->name('conversations.show')->middleware('auth');
                 });
 
                 /**
