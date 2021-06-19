@@ -14,7 +14,8 @@ $finder = Symfony\Component\Finder\Finder::create()
     ->ignoreVCS(true);
 
 $config = new PhpCsFixer\Config();
-$config->setRules([
+
+return $config->setRules([
     '@PSR2' => true,
     'array_syntax' => ['syntax' => 'short'],
     'ordered_imports' => ['sortAlgorithm' => 'alpha'],
