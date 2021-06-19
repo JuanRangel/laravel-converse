@@ -1,8 +1,8 @@
 # A conversation package
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/vsellis/laravel-converse.svg?style=flat-square)](https://packagist.org/packages/vsellis/laravel-converse)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/vsellis/laravel-converse/run-tests?label=tests)](https://github.com/vsellis/laravel-converse/actions?query=workflow%3Arun-tests+branch%3Amaster)
-[![Total Downloads](https://img.shields.io/packagist/dt/vsellis/laravel-converse.svg?style=flat-square)](https://packagist.org/packages/vsellis/laravel-converse)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/juanrangel/laravel-converse.svg?style=flat-square)](https://packagist.org/packages/juanrangel/laravel-converse)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/juanrangel/laravel-converse/run-tests?label=tests)](https://github.com/juanrangel/laravel-converse/actions?query=workflow%3Arun-tests+branch%3Amaster)
+[![Total Downloads](https://img.shields.io/packagist/dt/juanrangel/laravel-converse.svg?style=flat-square)](https://packagist.org/packages/juanrangel/laravel-converse)
 
 
 This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
@@ -12,7 +12,7 @@ This is where your description should go. Limit it to a paragraph or two. Consid
 You can install the package via composer:
 
 ```bash
-composer require vsellis/laravel-converse
+composer require juanrangel/laravel-converse
 ```
 
 Add the CanConverse trait to your user model
