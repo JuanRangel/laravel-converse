@@ -1,4 +1,6 @@
-<?php namespace JuanRangel\Converse\Models;
+<?php /** @noinspection PsalmGlobal */
+
+namespace JuanRangel\Converse\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;

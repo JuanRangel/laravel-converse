@@ -50,7 +50,6 @@ class ConverseServiceProvider extends ServiceProvider
                  * Broadcasting Channels
                  */
                 Broadcast::channel('conversations.{id}', function ($user, $id) {
-                    return true; // TODO
 
                     return $user->inConversation($id);
                 });
@@ -69,7 +68,7 @@ class ConverseServiceProvider extends ServiceProvider
     public function register() : void
     {
         $this->mergeConfigFrom(__DIR__.'/../config/converse.php', 'converse');
-        $this->app->singleton(Converse::class, function ($app) {
+        $this->app->singleton(Converse::class, function () {
             return new Converse;
         });
     }
