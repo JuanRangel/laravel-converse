@@ -8,7 +8,9 @@ class ConversationController
 {
     public function index()
     {
-        return view('converse::conversations.index');
+        return view('converse::conversations.index', [
+            'conversations' => auth()->user()->conversations
+        ]);
     }
 
     public function show(Conversation $conversation) : View

@@ -43,7 +43,7 @@ class ConverseServiceProvider extends ServiceProvider
             Route::prefix($prefix)->group(function () {
                 Route::middleware('auth')->group(function () {
                     Route::get('/', [ConversationController::class, 'index'])->name('conversations.index');
-                    Route::get('{conversation:uuid}', [ConversationController::class, 'show'])->name('conversations.show')->middleware('bindings');
+                    Route::get('{conversation:uuid}', [ConversationController::class, 'show'])->name('conversations.show');
                 });
 
                 /**
