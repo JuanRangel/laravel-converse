@@ -1,7 +1,7 @@
 # A conversation package
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/juanrangel/laravel-converse.svg?style=flat-square)](https://packagist.org/packages/juanrangel/laravel-converse)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/juanrangel/laravel-converse/run-tests?label=tests)](https://github.com/juanrangel/laravel-converse/actions?query=workflow%3Arun-tests+branch%3Amaster)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/juanrangel/laravel-converse/run-tests?label=tests)](https://github.com/JuanRangel/laravel-converse/actions?query=branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/juanrangel/laravel-converse.svg?style=flat-square)](https://packagist.org/packages/juanrangel/laravel-converse)
 
 
