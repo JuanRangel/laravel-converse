@@ -1,4 +1,4 @@
-<div class="block flex py-6">
+<div class="block flex pb-6">
 
     <div class="flex flex-1 items-center">
         <a href="{{route('conversations.index')}}" class="mr-2">
