@@ -1,7 +1,6 @@
 <?php
 
 use Faker\Factory;
-use \Faker\Generator;
 use JuanRangel\Converse\Models\Message;
 
 class MessageFactory extends Factory
