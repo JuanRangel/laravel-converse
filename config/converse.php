@@ -1,5 +1,6 @@
 <?php
 
+use JuanRangel\Converse\Actions\CloseConversationAction;
 use JuanRangel\Converse\Tests\User;
 
 return [
@@ -34,4 +35,11 @@ return [
     ],
 
     'layout' => 'converse::layouts.converse',
+
+    /**
+     * Register your actions
+     */
+    'actions' => [
+        CloseConversationAction::class
+    ]
 ];

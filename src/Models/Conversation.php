@@ -21,6 +21,16 @@ class Conversation extends Model
 //        return $this->messages->last()->created_at->format('n/d/Y g:i');
     }
 
+    public function getLastMessageAttribute()
+    {
+        return $this->messages->last();
+    }
+
+    public function getLastExcerptAttribute()
+    {
+        return ($this->last_message) ? mb_substr($this->last_message->body, 0, 100) : '...';
+    }
+
     public function getParticipantsAttribute()
     {
         $all = collect();

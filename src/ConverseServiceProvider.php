@@ -6,8 +6,10 @@ use Illuminate\Support\Facades\Broadcast;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use JuanRangel\Converse\Http\Controllers\ConversationController;
+use JuanRangel\Converse\Http\Livewire\Conversations\ConversationApp;
 use JuanRangel\Converse\Http\Livewire\Conversations\ConversationHeader;
 use JuanRangel\Converse\Http\Livewire\Conversations\ConversationList;
+use JuanRangel\Converse\Http\Livewire\Conversations\ConversationMessage;
 use JuanRangel\Converse\Http\Livewire\Conversations\ConversationMessages;
 use JuanRangel\Converse\Http\Livewire\Conversations\ConversationReply;
 use Livewire\Livewire;
@@ -53,9 +55,11 @@ class ConverseServiceProvider extends ServiceProvider
         /**
          * Livewire Components
          */
+        Livewire::component('converse::conversations.conversation-app', ConversationApp::class);
         Livewire::component('converse::conversations.conversation-list', ConversationList::class);
         Livewire::component('converse::conversations.conversation-header', ConversationHeader::class);
         Livewire::component('converse::conversations.conversation-messages', ConversationMessages::class);
+        Livewire::component('converse::conversations.conversation-message', ConversationMessage::class);
         Livewire::component('converse::conversations.conversation-reply', ConversationReply::class);
     }
 

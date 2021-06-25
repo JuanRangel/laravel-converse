@@ -1,19 +1,33 @@
-<form action="#" wire:submit.prevent="submit">
-    <div class="chat-footer flex-none">
-        <div class="flex flex-row items-center p-4">
+<div>
+    <div class="w-full py-3">
+        <div class="flex">
+            <input id="reply-form" autofocus type="text" class="border-gray-200 rounded-lg b-0 flex-auto" wire:model.defer="body" placeholder="Aa">
+            <button
+                    wire:click="submit"
+                    class="bg-blue-600 text-white rounded-full w-14 h-14 p-2 ml-3 flex justify-center items-center"
+                    type="submit"
+            >
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                </svg>
+            </button>
 
-            <div class="relative flex-grow">
-                <label class="w-full">
-                    <input wire:model="body" class="rounded-full py-2 pl-3 pr-10 w-full border border-gray-300 focus:border-gray-300 bg-gray-200 focus:bg-gray-200 focus:outline-none text-gray-800 focus:shadow-md transition duration-300 ease-in"
-                           type="text" value="" placeholder="Aa"/>
-                    <button type="submit" class="absolute top-0 right-0 mt-2 mr-3 flex flex-shrink-0 focus:outline-none block text-gray-800 hover:text-gray-700 w-6 h-6">
-                        <i class="fal fa-paper-plane"></i>
-                    </button>
-                </label>
-            </div>
-{{--            <button type="button" class="flex flex-shrink-0 focus:outline-none mx-2 block text-gray-600 hover:text-gray-700 w-6 h-6">--}}
-{{--                // thumbs up icon--}}
-{{--            </button>--}}
         </div>
+        @error('newReplyState.body')
+        <div class="text-red-400">
+            {{$message}}
+        </div>
+        @enderror
+
     </div>
-</form>
+</div>
+
+@push('scripts')
+    <script>
+        window.addEventListener('focusReply', event => {
+            var textarea = document.getElementById('reply-form');
+            textarea.scrollTop = textarea.scrollHeight;
+            textarea.focus();
+        });
+    </script>
+@endpush

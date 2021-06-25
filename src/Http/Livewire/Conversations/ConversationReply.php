@@ -26,9 +26,7 @@ class ConversationReply extends Component
         ]);
 
         $message = Converse::createMessage($this->conversation, auth()->user(), $this->body);
-
-        $this->emit('message.created', $message->id);
-        event(MessageCreated::class, $message->id);
+        $this->emit('newMessage');
         $this->body = '';
     }
 
