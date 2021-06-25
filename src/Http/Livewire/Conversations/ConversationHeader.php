@@ -24,7 +24,7 @@ class ConversationHeader extends Component
     public function doAction($key)
     {
         $currentAction = $this->getActions()[$key];
-        $action        = new $currentAction;
+        $action = new $currentAction;
         $action->setProps($this->conversation);
 
         try {
