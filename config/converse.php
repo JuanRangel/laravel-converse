@@ -1,6 +1,5 @@
 <?php
 
-use JuanRangel\Converse\Actions\CloseConversationAction;
 use JuanRangel\Converse\Tests\User;
 
 return [

@@ -12,13 +12,13 @@
     </div>
 
     <div class="flex text-gray-400 space-x-3">
-        <button wire:click="addParticipant">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/>
-            </svg>
-        </button>
+{{--        <button wire:click="addParticipant">--}}
+{{--            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">--}}
+{{--                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/>--}}
+{{--            </svg>--}}
+{{--        </button>--}}
 
-{{--        @if(count($this->getActions()) > 0)--}}
+        @if(count($this->getActions()) > 0)
             <div class="ml-2 flex-shrink-0 relative inline-block text-left" x-data="{openMenu: false}">
                 <button x-on:click="openMenu = ! openMenu" x-on:click.away="openMenu = false" type="button" class="group relative w-8 h-8 bg-white rounded-full inline-flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                         id="options-menu-0-button" aria-expanded="false" aria-haspopup="true">
@@ -46,7 +46,7 @@
                     @endforeach
                 </div>
             </div>
-{{--        @endif--}}
+        @endif
 
     </div>
 </div>
