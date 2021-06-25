@@ -2,6 +2,7 @@
 
 namespace JuanRangel\Converse\Http\Livewire\Conversations;
 
+use Exception;
 use Illuminate\View\View;
 use Livewire\Component;
 

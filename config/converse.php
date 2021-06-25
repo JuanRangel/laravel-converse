@@ -39,7 +39,5 @@ return [
     /**
      * Register your actions
      */
-    'actions' => [
-        CloseConversationAction::class
-    ]
+    'actions' => []
 ];
