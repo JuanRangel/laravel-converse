@@ -1,5 +1,5 @@
 <div>
-    <div class="h-screen flex overflow-hidden bg-white absolute inset-0">
+    <div class="h-screen flex overflow-hidden bg-white">
         <div class="flex-1 relative z-0 flex overflow-hidden">
             <main class="flex-1 relative z-0 overflow-y-auto focus:outline-none xl:order-last">
                 <div class="absolute inset-0 py-6 px-4 sm:px-6 lg:px-8 divide-y divide-gray-100 flex flex-col">

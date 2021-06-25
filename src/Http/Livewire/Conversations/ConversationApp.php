@@ -25,7 +25,7 @@ class ConversationApp extends Component
     public function appendMessageFromBroadcast() : void
     {
         $this->conversation->fresh();
-//        $this->dispatchBrowserEvent('scroll-chat');
+        $this->emit('newMessage');
     }
 
     public function render() : View
