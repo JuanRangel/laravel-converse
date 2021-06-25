@@ -16,7 +16,6 @@ class Conversation extends Model
 
     public function getLastMessageTimeAttribute()
     {
-
         return $this->messages->last()->created_at->diffForHumans();
 //        return $this->messages->last()->created_at->format('n/d/Y g:i');
     }

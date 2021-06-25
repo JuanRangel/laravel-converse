@@ -3,8 +3,6 @@
 namespace JuanRangel\Converse\Http\Livewire\Conversations;
 
 use Illuminate\View\View;
-use JuanRangel\Converse\Actions\CloseConversationAction;
-use JuanRangel\Converse\Models\Conversation;
 use Livewire\Component;
 
 class ConversationApp extends Component

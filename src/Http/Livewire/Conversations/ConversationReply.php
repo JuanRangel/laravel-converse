@@ -4,7 +4,6 @@ namespace JuanRangel\Converse\Http\Livewire\Conversations;
 
 use Illuminate\View\View;
 use JuanRangel\Converse\Converse;
-use JuanRangel\Converse\Events\MessageCreated;
 use JuanRangel\Converse\Models\Conversation;
 use JuanRangel\Converse\Services\CreateMessageService;
 use Livewire\Component;

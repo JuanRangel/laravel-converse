@@ -4,7 +4,6 @@ namespace JuanRangel\Converse\Tests\Unit;
 
 use JuanRangel\Converse\Converse;
 use JuanRangel\Converse\Models\Conversation;
-use JuanRangel\Converse\Services\CreateMessageService;
 use JuanRangel\Converse\Tests\TestCase;
 use JuanRangel\Converse\Tests\User;
 
